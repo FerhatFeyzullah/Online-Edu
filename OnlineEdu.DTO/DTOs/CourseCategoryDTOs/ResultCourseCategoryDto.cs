@@ -15,6 +15,5 @@ namespace OnlineEdu.DTO.DTOs.CourseCategoryDTOs
         public string Description { get; set; }
         public bool IsShown { get; set; }
 
-        public List<Course> Courses { get; set; }
     }
 }

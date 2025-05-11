@@ -1,6 +1,0 @@
-@EnlineEdu.API_HostAddress = http://localhost:5235
-
-GET {{EnlineEdu.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

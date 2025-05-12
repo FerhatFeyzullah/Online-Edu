@@ -1,5 +1,52 @@
-﻿@{
-	ViewData["Title"] = "Hakkında Sayfası";
+﻿@model List<ResultAboutDto>
+
+@{
+	ViewData["Title"] = "Hakkımda Sayfası";
 	Layout = "~/Views/Shared/_AdminLayout.cshtml";
 
 }
+
+@{
+	int count = 0;
+}
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Resim 1</th>
+			<th>Resim 2</th>
+			<th>Açıklama</th>
+			<th>Madde 1</th>
+			<th>Madde 2</th>
+			<th>Madde 3</th>
+			<th>Madde 4</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var item in Model)
+		{
+			count++;
+			<tr>
+				<td>@count</td>
+				<td><img src="@item.ImageUrl1" alt="Resim 1" style="width: 75px; height: 75px;" /></td>
+				<td><img src="@item.ImageUrl2" alt="Resim 2" style="width: 75px; height: 75px;" /></td>
+				<td>@item.Description</td>
+				<td>@item.Item1</td>
+				<td>@item.Item2</td>
+				<td>@item.Item3</td>
+				<td>@item.Item4</td>
+
+				<td>
+					<a asp-area="Admin" asp-controller="About" asp-action="UpdateAbout" asp-route-id="@item.AboutId" class="btn btn-outline-info">Düzenle</a>
+					<a asp-area="Admin" asp-controller="About" asp-action="DeleteAbout" asp-route-id="@item.AboutId" class="btn btn-outline-danger">Sil</a>
+				</td>
+
+			</tr>
+		}
+	</tbody>
+</table>
+
+<a asp-area="Admin" asp-controller="About" asp-action="CreateAbout" class="btn btn-outline-primary">Yeni Hakkımda Ekle</a>
+
+	

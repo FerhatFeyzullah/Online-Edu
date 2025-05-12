@@ -1,0 +1,18 @@
+﻿@model CreateBannerDto
+
+@{
+    ViewData["Title"] = "Yeni Banner Oluşturma Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post">
+    <label>Banner Başlığı</label>
+    <input type="text" asp-for="Title" class="form-control"/>
+    <br />
+    <label>Banner Resmi Url</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+
+    <button class="btn btn-outline-success">Kaydet</button>
+</form>

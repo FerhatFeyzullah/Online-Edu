@@ -9,16 +9,17 @@ namespace OnlineEdu.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BlogsController(IGenericService<Blog> _blogService,IMapper _mapper) : ControllerBase
+    public class BlogsController(IMapper _mapper,IBlogService _blogService) : ControllerBase
     {
         [HttpGet]
         public IActionResult Get()
         {
-            var blogs = _blogService.AGetList();
+            var values = _blogService.AGetBlogsWithCategory();
+            var blogs = _mapper.Map<List<ResultBlogDto>>(values);
             return Ok(blogs);
         }
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult GetById(int id)
         {
             var blog = _blogService.AGetById(id);
             return Ok(blog);

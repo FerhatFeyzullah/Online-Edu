@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Multiple Start",
+    "Projects": [
+      {
+        "Path": "OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "OnlineEdu.API\\OnlineEdu.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

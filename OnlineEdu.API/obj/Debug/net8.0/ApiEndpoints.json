@@ -444,6 +444,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseCategoriesController",
+    "Method": "DontShowOnHome",
+    "RelativePath": "api/CourseCategories/DontShowOnHome/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseCategoriesController",
+    "Method": "ShowOnHome",
+    "RelativePath": "api/CourseCategories/ShowOnHome/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "OnlineEdu.API.Controllers.CoursesController",
     "Method": "Get",
     "RelativePath": "api/Courses",
@@ -506,6 +538,38 @@
     "Method": "Delete",
     "RelativePath": "api/Courses/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CoursesController",
+    "Method": "DontShowOnHome",
+    "RelativePath": "api/Courses/DontShowOnHome/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CoursesController",
+    "Method": "ShowOnHome",
+    "RelativePath": "api/Courses/ShowOnHome/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

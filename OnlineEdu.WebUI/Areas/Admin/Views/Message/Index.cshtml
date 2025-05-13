@@ -1,0 +1,69 @@
+﻿@model List<ResultMessageDto>
+
+@{
+    ViewData["Title"] = "Gelen Mesajlar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+	int count = 0;
+}
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Gönderen Adı</th>
+			<th>Email</th>
+			<th>Konu</th>
+			
+
+			<th></th>
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			count++;
+			<tr>
+				<td>@count</td>
+				<td>@item.Name</td>
+				<td>@item.Email</td>
+				<td>@item.Subject</td>
+
+				<td>
+					<button onclick="deleteMessageFunc(@item.MessageId)" class="btn btn-outline-danger">Sil</button>
+
+					<a asp-area="Admin" asp-controller="Message" asp-action="MessageDetail" asp-route-id="@item.MessageId" class="btn btn-outline-info">Mesajı Aç</a>
+					
+				</td>
+
+			</tr>
+		}
+	</tbody>
+</table>
+
+
+<script>
+	function deleteMessageFunc(id)
+	{
+		Swal.fire({
+	  title: "Silmek istediğine emin misin?",
+	  text: "Bu işlemi geri alamazsın!",
+	  icon: "warning",
+	  showCancelButton: true,
+	  confirmButtonColor: "#3085d6",
+	  cancelButtonColor: "#d33",
+	  confirmButtonText: "Evet, Sil!",
+	  cancelButtonText: "Iptal"
+	}).then((result) => {
+	  if (result.isConfirmed) {
+		window.location.href = "/Admin/Message/DeleteMessage/"+id;
+	  }
+	});
+	}
+
+
+</script>
+

@@ -12,16 +12,16 @@ namespace OnlineEdu.DataAccess.Repositories
 {
     public class BlogRepository : GenericRepository<Blog>, IBlogRepository
     {
-        private readonly OnlineEduContext _eduContext;
+        
         public BlogRepository(OnlineEduContext _context) : base(_context)
         { 
-            _eduContext = _context;
+            
         }
         
 
         public List<Blog> GetBlogsWithCategory()
         {
-            return _eduContext.Blogs.Include(x => x.BlogCategory).ToList();
+            return _context.Blogs.Include(x => x.BlogCategory).ToList();
         }
     }
 }

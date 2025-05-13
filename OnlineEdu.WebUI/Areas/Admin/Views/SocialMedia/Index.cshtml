@@ -1,0 +1,66 @@
+﻿@model List<ResultSocialMediaDto>
+
+@{
+    ViewData["Title"] = "Sosyal Medya Hesapları";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+	int count = 0;
+}
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Sosyal Medya</th>
+		
+			<th></th>
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			count++;
+			<tr>
+				<td>@count</td>
+				<td><i class="@item.Icon fa-2x"></i> <a href="@item.Url">  @item.Title</a> </td>
+
+				<td>
+					<button onclick="deleteSocialMediaFunc(@item.SocialMediaId)" class="btn btn-outline-danger">Sil</button>
+
+					<a asp-area="Admin" asp-controller="SocialMedia" asp-action="UpdateSocialMedia" asp-route-id="@item.SocialMediaId" class="btn btn-outline-info">Düzenle</a>
+					
+				</td>
+
+			</tr>
+		}
+	</tbody>
+</table>
+
+<a asp-area="Admin" asp-controller="SocialMedia" asp-action="CreateSocialMedia" class="btn btn-outline-primary">Yeni Sosyal Medya Ekle</a>
+
+<script>
+	function deleteSocialMediaFunc(id)
+	{
+		Swal.fire({
+	  title: "Silmek istediğine emin misin?",
+	  text: "Bu işlemi geri alamazsın!",
+	  icon: "warning",
+	  showCancelButton: true,
+	  confirmButtonColor: "#3085d6",
+	  cancelButtonColor: "#d33",
+	  confirmButtonText: "Evet, Sil!",
+	  cancelButtonText: "Iptal"
+	}).then((result) => {
+	  if (result.isConfirmed) {
+		window.location.href = "/Admin/SocialMedia/DeleteSocialMedia/"+id;
+	  }
+	});
+	}
+
+
+</script>
+
+

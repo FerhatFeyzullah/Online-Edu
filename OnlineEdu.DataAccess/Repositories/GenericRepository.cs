@@ -10,8 +10,13 @@ using OnlineEdu.DataAccess.Interface;
 
 namespace OnlineEdu.DataAccess.Repositories
 {
-    public class GenericRepository<A>(OnlineEduContext _context) : IRepository<A> where A : class
+    public class GenericRepository<A>: IRepository<A> where A : class
     {
+        protected readonly OnlineEduContext _context;
+        public GenericRepository(OnlineEduContext context)
+        {
+            _context = context;
+        }
 
         public DbSet<A> Table { get => _context.Set<A>();}
         public int Count()

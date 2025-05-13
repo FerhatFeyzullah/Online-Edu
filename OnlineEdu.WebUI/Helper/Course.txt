@@ -1,0 +1,191 @@
+﻿[
+  {
+    "courseName": "C# ile Yazılım Geliştirme Temelleri",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 6,
+    "price": 400,
+    "isShown": true
+  },
+  {
+    "courseName": "Java ile Nesne Tabanlı Programlama",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 6,
+    "price": 470,
+    "isShown": true
+  },
+  {
+    "courseName": "Yazılımda Clean Code ve SOLID Prensipleri",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 6,
+    "price": 365,
+    "isShown": true
+  },
+  {
+    "courseName": "HTML ve CSS ile Web'e Giriş",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 7,
+    "price": 300,
+    "isShown": true
+  },
+  {
+    "courseName": "JavaScript ile Dinamik Web Sayfaları",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 7,
+    "price": 430,
+    "isShown": true
+  },
+  {
+    "courseName": "Bootstrap ve Responsive Web Tasarımı",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 7,
+    "price": 490,
+    "isShown": true
+  },
+  {
+    "courseName": "Python ile Veri Analizine Giriş",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 8,
+    "price": 390,
+    "isShown": true
+  },
+  {
+    "courseName": "Pandas ve Numpy ile Veri İşleme",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 8,
+    "price": 410,
+    "isShown": true
+  },
+  {
+    "courseName": "Veri Bilimi Projelerinde Uygulama",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 8,
+    "price": 460,
+    "isShown": true
+  },
+  {
+    "courseName": "Makine Öğrenmesine Giriş",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 9,
+    "price": 350,
+    "isShown": true
+  },
+  {
+    "courseName": "TensorFlow ile Derin Öğrenme",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 9,
+    "price": 480,
+    "isShown": true
+  },
+  {
+    "courseName": "Yapay Zeka ile Görüntü İşleme",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 9,
+    "price": 420,
+    "isShown": true
+  },
+  {
+    "courseName": "Flutter ile Mobil Uygulama Geliştirme",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 10,
+    "price": 395,
+    "isShown": true
+  },
+  {
+    "courseName": "React Native ile Cross Platform Uygulama",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 10,
+    "price": 470,
+    "isShown": true
+  },
+  {
+    "courseName": "Android Studio ile Uygulama Geliştirme",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 10,
+    "price": 355,
+    "isShown": true
+  },
+  {
+    "courseName": "Ağ Güvenliği ve Temel Protokoller",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 11,
+    "price": 310,
+    "isShown": true
+  },
+  {
+    "courseName": "Etik Hackerlık ve Penetrasyon Testi",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 11,
+    "price": 480,
+    "isShown": true
+  },
+  {
+    "courseName": "Siber Güvenlikte Temel Araçlar",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 11,
+    "price": 350,
+    "isShown": true
+  },
+  {
+    "courseName": "Unity ile 2D Oyun Geliştirme",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 12,
+    "price": 445,
+    "isShown": true
+  },
+  {
+    "courseName": "Unreal Engine ile Oyun Fiziği",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 12,
+    "price": 410,
+    "isShown": true
+  },
+  {
+    "courseName": "Mobil Oyunlarda Monetizasyon Teknikleri",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 12,
+    "price": 365,
+    "isShown": true
+  },
+  {
+    "courseName": "SQL Veritabanı Tasarım İlkeleri",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 13,
+    "price": 470,
+    "isShown": true
+  },
+  {
+    "courseName": "MySQL ve PostgreSQL ile Uygulama",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 13,
+    "price": 385,
+    "isShown": true
+  },
+  {
+    "courseName": "Veritabanı Yedekleme ve Güvenliği",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 13,
+    "price": 420,
+    "isShown": true
+  },
+  {
+    "courseName": "Excel ile Gelişmiş Fonksiyonlar",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 14,
+    "price": 310,
+    "isShown": true
+  },
+  {
+    "courseName": "PowerPoint Sunum Becerileri",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 14,
+    "price": 335,
+    "isShown": true
+  },
+  {
+    "courseName": "Word ile Rapor ve Belge Oluşturma",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/popular_sub1.png",
+    "courseCategoryId": 14,
+    "price": 365,
+    "isShown": true
+  }
+]

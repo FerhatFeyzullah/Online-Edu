@@ -461,6 +461,16 @@
   },
   {
     "ContainingType": "OnlineEdu.API.Controllers.CourseCategoriesController",
+    "Method": "GetActiveCategory",
+    "RelativePath": "api/CourseCategories/GetActiveCategory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseCategoriesController",
     "Method": "ShowOnHome",
     "RelativePath": "api/CourseCategories/ShowOnHome/{id}",
     "HttpMethod": "GET",
@@ -563,6 +573,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CoursesController",
+    "Method": "GetActiveCourse",
+    "RelativePath": "api/Courses/GetActiveCourse",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

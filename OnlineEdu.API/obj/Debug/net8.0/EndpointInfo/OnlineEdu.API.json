@@ -689,6 +689,18 @@
         }
       }
     },
+    "/api/CourseCategories/GetActiveCategory": {
+      "get": {
+        "tags": [
+          "CourseCategories"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/CourseCategories/ShowOnHome/{id}": {
       "get": {
         "tags": [
@@ -841,6 +853,18 @@
               "format": "int32"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Courses/GetActiveCourse": {
+      "get": {
+        "tags": [
+          "Courses"
         ],
         "responses": {
           "200": {

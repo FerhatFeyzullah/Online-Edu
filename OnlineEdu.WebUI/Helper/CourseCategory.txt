@@ -1,0 +1,56 @@
+﻿[
+  {
+    "categoryName": "Yazılım Geliştirme",
+    "icon": "test",
+    "description": "Yazılım geliştirme süreçleri, algoritmalar, nesne yönelimli programlama ve kod yapıları üzerine kapsamlı bir eğitimdir.",
+    "isShown": true
+  },
+  {
+    "categoryName": "Web Tasarımı",
+    "icon": "test",
+    "description": "HTML, CSS ve modern tasarım araçlarıyla kullanıcı dostu ve mobil uyumlu web siteleri oluşturmayı öğrenin.",
+    "isShown": true
+  },
+  {
+    "categoryName": "Veri Bilimi",
+    "icon": "test",
+    "description": "Veri analizi, görselleştirme, Python ve istatistiksel yöntemlerle veri bilimi projeleri geliştirme eğitimi sunar.",
+    "isShown": true
+  },
+  {
+    "categoryName": "Yapay Zeka",
+    "icon": "test",
+    "description": "Makine öğrenmesi, derin öğrenme ve yapay zeka algoritmalarını kullanarak akıllı sistemler geliştirmeyi öğrenin.",
+    "isShown": true
+  },
+  {
+    "categoryName": "Mobil Uygulama",
+    "icon": "test",
+    "description": "Android ve iOS platformları için Flutter ve React Native ile profesyonel mobil uygulamalar geliştirme eğitimi.",
+    "isShown": true
+  },
+  {
+    "categoryName": "Siber Güvenlik",
+    "icon": "test",
+    "description": "Ağ güvenliği, şifreleme yöntemleri ve etik hacking teknikleriyle dijital sistemlerin korunmasını öğrenin.",
+    "isShown": true
+  },
+  {
+    "categoryName": "Oyun Geliştirme",
+    "icon": "test",
+    "description": "Unity veya Unreal Engine kullanarak 2D ve 3D oyunların temellerini ve gelişmiş mekaniklerini öğrenin.",
+    "isShown": true
+  },
+  {
+    "categoryName": "Veritabanı Yönetimi",
+    "icon": "test",
+    "description": "SQL, NoSQL, veri modelleme ve veritabanı yönetim sistemleriyle etkili veri işleme yöntemlerini öğrenin.",
+    "isShown": true
+  },
+  {
+    "categoryName": "Ofis Programları",
+    "icon": "test",
+    "description": "Microsoft Office programlarını (Word, Excel, PowerPoint) profesyonel düzeyde kullanmayı öğrenin.",
+    "isShown": true
+  }
+]

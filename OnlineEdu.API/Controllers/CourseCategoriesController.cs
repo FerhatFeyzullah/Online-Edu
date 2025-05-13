@@ -23,6 +23,14 @@ namespace OnlineEdu.API.Controllers
             var value = _courseCategoryService.AGetById(id);
             return Ok(value);
         }
+
+        [HttpGet("GetActiveCategory")]
+        public IActionResult GetActiveCategory()
+        {
+            var values = _courseCategoryService.AGetFilteredList(x=>x.IsShown==true);
+            return Ok(values);
+        }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

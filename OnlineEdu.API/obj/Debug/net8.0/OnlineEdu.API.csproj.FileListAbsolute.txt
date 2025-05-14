@@ -180,3 +180,8 @@ C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.API\obj\Debug\net8.0\O
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.API\obj\Debug\net8.0\OnlineEdu.API.genruntimeconfig.cache
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.API\obj\Debug\net8.0\ref\OnlineEdu.API.dll
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.API\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.API\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll

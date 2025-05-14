@@ -17,10 +17,113 @@ namespace OnlineEdu.DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.4")
+                .HasAnnotation("ProductVersion", "9.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.About", b =>
                 {
@@ -60,7 +163,116 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasKey("AboutId");
 
-                    b.ToTable("Abouts", (string)null);
+                    b.ToTable("Abouts");
+                });
+
+            modelBuilder.Entity("OnlineEdu.Entity.Entities.AppRole", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("OnlineEdu.Entity.Entities.AppUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Banner", b =>
@@ -81,7 +293,7 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasKey("BannerId");
 
-                    b.ToTable("Banners", (string)null);
+                    b.ToTable("Banners");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Blog", b =>
@@ -114,7 +326,7 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasIndex("BlogCategoryId");
 
-                    b.ToTable("Blogs", (string)null);
+                    b.ToTable("Blogs");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.BlogCategory", b =>
@@ -131,7 +343,7 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasKey("BlogCategoryId");
 
-                    b.ToTable("BlogCategories", (string)null);
+                    b.ToTable("BlogCategories");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Contact", b =>
@@ -160,7 +372,7 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasKey("ContactId");
 
-                    b.ToTable("Contacts", (string)null);
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Course", b =>
@@ -170,6 +382,9 @@ namespace OnlineEdu.DataAccess.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseId"));
+
+                    b.Property<int?>("AppUserId")
+                        .HasColumnType("int");
 
                     b.Property<int>("CourseCategoryId")
                         .HasColumnType("int");
@@ -190,9 +405,11 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasKey("CourseId");
 
+                    b.HasIndex("AppUserId");
+
                     b.HasIndex("CourseCategoryId");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.CourseCategory", b =>
@@ -220,7 +437,30 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasKey("CourseCategoryId");
 
-                    b.ToTable("CourseCategories", (string)null);
+                    b.ToTable("CourseCategories");
+                });
+
+            modelBuilder.Entity("OnlineEdu.Entity.Entities.CourseRegister", b =>
+                {
+                    b.Property<int>("CourseRegisterId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseRegisterId"));
+
+                    b.Property<int>("AppUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CourseRegisterId");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("CourseRegister");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Message", b =>
@@ -249,7 +489,7 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasKey("MessageId");
 
-                    b.ToTable("Messages", (string)null);
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.SocialMedia", b =>
@@ -274,7 +514,7 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasKey("SocialMediaId");
 
-                    b.ToTable("SocialMedias", (string)null);
+                    b.ToTable("SocialMedias");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Subscriber", b =>
@@ -294,7 +534,7 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasKey("SubscriberId");
 
-                    b.ToTable("Subscribers", (string)null);
+                    b.ToTable("Subscribers");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Testimonial", b =>
@@ -326,7 +566,58 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasKey("TestimonialId");
 
-                    b.ToTable("Testimonials", (string)null);
+                    b.ToTable("Testimonials");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
+                {
+                    b.HasOne("OnlineEdu.Entity.Entities.AppRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+                {
+                    b.HasOne("OnlineEdu.Entity.Entities.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+                {
+                    b.HasOne("OnlineEdu.Entity.Entities.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+                {
+                    b.HasOne("OnlineEdu.Entity.Entities.AppRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OnlineEdu.Entity.Entities.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+                {
+                    b.HasOne("OnlineEdu.Entity.Entities.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Blog", b =>
@@ -342,18 +633,55 @@ namespace OnlineEdu.DataAccess.Migrations
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Course", b =>
                 {
+                    b.HasOne("OnlineEdu.Entity.Entities.AppUser", "AppUser")
+                        .WithMany("Courses")
+                        .HasForeignKey("AppUserId");
+
                     b.HasOne("OnlineEdu.Entity.Entities.CourseCategory", "CourseCategory")
                         .WithMany("Courses")
                         .HasForeignKey("CourseCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("AppUser");
+
                     b.Navigation("CourseCategory");
+                });
+
+            modelBuilder.Entity("OnlineEdu.Entity.Entities.CourseRegister", b =>
+                {
+                    b.HasOne("OnlineEdu.Entity.Entities.AppUser", "AppUser")
+                        .WithMany("CourseRegisters")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OnlineEdu.Entity.Entities.Course", "Course")
+                        .WithMany("CourseRegisters")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("OnlineEdu.Entity.Entities.AppUser", b =>
+                {
+                    b.Navigation("CourseRegisters");
+
+                    b.Navigation("Courses");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.BlogCategory", b =>
                 {
                     b.Navigation("Blogs");
+                });
+
+            modelBuilder.Entity("OnlineEdu.Entity.Entities.Course", b =>
+                {
+                    b.Navigation("CourseRegisters");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.CourseCategory", b =>

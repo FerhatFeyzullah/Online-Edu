@@ -20,8 +20,9 @@ namespace OnlineEdu.WebUI.Controllers
             {
                 foreach (var item in result.Errors)
                 {
-                    ModelState.AddModelError(item.Code, item.Description);
+                    ModelState.AddModelError("", item.Description);
                 }
+                return View();
             }
             return RedirectToAction("Home","Login");
         }

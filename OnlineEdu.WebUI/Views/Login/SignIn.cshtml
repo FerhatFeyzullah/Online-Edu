@@ -1,9 +1,10 @@
-﻿@model UserRegisterDto
+﻿@model UserLoginDto
 
 @{
-    ViewData["Title"] = "Kayıt Ol";
+    ViewData["Title"] = "Giriş Yap";
     Layout = "~/Views/Shared/_UILayout.cshtml";
 }
+
 
 <!doctype html>
 <html lang="en">
@@ -23,7 +24,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="~/login-form-07/css/style.css">
 
-    <title>Online Edu Kayıt Olma Sayfası</title>
+    <title>Online Edu | Giriş Sayfası</title>
 </head>
 <body>
 
@@ -39,46 +40,28 @@
                     <div class="row justify-content-center">
                         <div class="col-md-8">
                             <div class="mb-4">
-                                <h3>Kaydol</h3>
-                                <p class="mb-4">Ücretsiz kurslarımıza erişebilmek için aşağıdaki kayıt formunu doldurun.</p>
+                                <h3>Giriş Yap</h3>
+                                <p class="mb-4">Hoşgeldiniz.</p>
                             </div>
                             <form method="post">
+                                
                                 <div class="form-group first">
-                                    <label for="username">Ad</label>
-                                    <input type="text" asp-for="FirstName" class="form-control">
-
-                                </div>
-                                <div class="form-group first">
-                                    <label for="username">Soyad</label>
-                                    <input type="text" asp-for="LastName" class="form-control">
-
-                                </div>
-                                <div class="form-group first">
-                                    <label for="username">Username</label>
-                                    <input type="text" asp-for="UserName" class="form-control">
-
-                                </div>
-                                <div class="form-group first">
-                                    <label for="username">Email</label>
+                                    <label>Email</label>
                                     <input type="email" asp-for="Email" class="form-control">
 
                                 </div>
                                 <div class="form-group first">
-                                    <label for="username">Şifre</label>
+                                    <label>Şifre</label>
                                     <input type="password" asp-for="Password" class="form-control">
 
                                 </div>
-                                <div class="form-group last mb-4">
-                                    <label for="password">Şİfreyi tekrar girin</label>
-                                    <input type="password" asp-for="ConfirmPassword" class="form-control">
-
-                                </div>
-
+                               
                                 <div class="text-danger">
                                     @Html.ValidationSummary()
                                 </div>
 
-                                <input type="submit" value="Kaydol" class="btn btn-block btn-primary">
+                                @* <input type="submit" value="Giriş Yap" class="btn btn-block btn-primary"> *@
+                                <button class ="btn btn-block btn-primary">Giriş Yap</button>
 
                             </form>
                         </div>
@@ -97,4 +80,5 @@
     <script src="~/login-form-07/js/main.js"></script>
 </body>
 </html>
+
 

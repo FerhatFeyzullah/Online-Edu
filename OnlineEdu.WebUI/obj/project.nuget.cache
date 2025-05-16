@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "JRdnVFxu3kA=",
+  "dgSpecHash": "+1CTSu41CUo=",
   "success": true,
   "projectFilePath": "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.WebUI\\OnlineEdu.WebUI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",

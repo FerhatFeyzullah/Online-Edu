@@ -13,19 +13,19 @@ namespace OnlineEdu.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> SignIn(UserLoginDto userLoginDto)
         { 
-             var userResult = await _userService.LoginAsync(userLoginDto);
+             var userRole = await _userService.LoginAsync(userLoginDto);
 
-            if (userResult == "Admin")
+            if (userRole == "Admin")
             {
-                RedirectToAction("Index", "Banner", new { area = "Admin" });
+                return RedirectToAction("Index", "Banner", new { area = "Admin" });
             }
-            if (userResult == "Teacher")
+            else if (userRole == "Teacher")
             {
-                RedirectToAction("Index", "MyCourse", new { area = "Teacher" });
+                return RedirectToAction("Index", "MyCourse", new { area = "Teacher" });
             }
-            if (userResult == "Student")
+            else if (userRole == "Student")
             {
-                RedirectToAction("Index", "CourseRegister", new { area = "Student" });
+                return RedirectToAction("Index", "CourseRegister", new { area = "Student" });
             }
 
             else

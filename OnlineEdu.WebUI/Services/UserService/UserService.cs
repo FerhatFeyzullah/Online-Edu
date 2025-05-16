@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol;
 using OnlineEdu.Entity.Entities;
 using OnlineEdu.WebUI.DTOs.UserDTOs;
 
 namespace OnlineEdu.WebUI.Services.UserService
 {
-    public class UserService(UserManager<AppUser> _userManger, SignInManager<AppUser> _singInManager,
+    public class UserService(UserManager<AppUser> _userManager, SignInManager<AppUser> _singInManager,
         RoleManager<AppRole> _roleManager) : IUserService
     {
         public Task<bool> AssignRoleAsync(UserRoleDto userRoleDto)
@@ -32,12 +34,30 @@ namespace OnlineEdu.WebUI.Services.UserService
                  return new IdentityResult();
             }
 
-            return await _userManger.CreateAsync(user, userRegisterDto.Password);
+            var result =  await _userManager.CreateAsync(user, userRegisterDto.Password);
+
+            if (result.Succeeded) 
+            {
+            await _userManager.AddToRoleAsync(user, "Student");
+                return result;
+            }
+           return result;
+
+        }
+
+        public async Task<List<AppUser>> GetAllUserAsync()
+        {
+            return await _userManager.Users.ToListAsync();
+        }
+
+        public async Task<AppUser> GetUserById(int id)
+        {
+           return await _userManager.Users.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<string> LoginAsync(UserLoginDto userLoginDto)
         {
-            var user = await _userManger.FindByEmailAsync(userLoginDto.Email);
+            var user = await _userManager.FindByEmailAsync(userLoginDto.Email);
             if (user == null)
             {
                 return null;
@@ -51,11 +71,11 @@ namespace OnlineEdu.WebUI.Services.UserService
             }
             else 
             {
-                var IsAdmin = await _userManger.IsInRoleAsync(user, "Admin");
+                var IsAdmin = await _userManager.IsInRoleAsync(user, "Admin");
                 if (IsAdmin) { return "Admin"; }
-                var IsTeacher = await _userManger.IsInRoleAsync(user, "Teacher");
+                var IsTeacher = await _userManager.IsInRoleAsync(user, "Teacher");
                 if (IsTeacher) { return "Teacher"; }
-                var IsStudent = await _userManger.IsInRoleAsync(user, "Student");
+                var IsStudent = await _userManager.IsInRoleAsync(user, "Student");
                 if (IsStudent) { return "Student"; }
             }
             return null;

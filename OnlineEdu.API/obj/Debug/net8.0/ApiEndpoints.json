@@ -296,6 +296,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "OnlineEdu.API.Controllers.BlogsController",
+    "Method": "GetBlogsWithCategoryByWriter",
+    "RelativePath": "api/Blogs/GetBlogsWithCategoryByWriter/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "OnlineEdu.API.Controllers.ContactsController",
     "Method": "Get",
     "RelativePath": "api/Contacts",
@@ -587,6 +603,22 @@
   },
   {
     "ContainingType": "OnlineEdu.API.Controllers.CoursesController",
+    "Method": "GetCourseWithTeacherId",
+    "RelativePath": "api/Courses/GetCourseWithTeacherId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CoursesController",
     "Method": "ShowOnHome",
     "RelativePath": "api/Courses/ShowOnHome/{id}",
     "HttpMethod": "GET",
@@ -812,6 +844,86 @@
     "Method": "Delete",
     "RelativePath": "api/Subscribers/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.TeacherSocialsController",
+    "Method": "Create",
+    "RelativePath": "api/TeacherSocials",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createTeacherSocialDto",
+        "Type": "OnlineEdu.DTO.DTOs.TeacherSocialDTOs.CreateTeacherSocialDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.TeacherSocialsController",
+    "Method": "Update",
+    "RelativePath": "api/TeacherSocials",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateTeacherSocialDto",
+        "Type": "OnlineEdu.DTO.DTOs.TeacherSocialDTOs.UpdateTeacherSocialDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.TeacherSocialsController",
+    "Method": "GetById",
+    "RelativePath": "api/TeacherSocials/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.TeacherSocialsController",
+    "Method": "Delete",
+    "RelativePath": "api/TeacherSocials/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.TeacherSocialsController",
+    "Method": "GetTeacherSocialByFiltered",
+    "RelativePath": "api/TeacherSocials/GetTeacherSocialByFiltered/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

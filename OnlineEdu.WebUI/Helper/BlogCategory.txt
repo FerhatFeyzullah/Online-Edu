@@ -1,0 +1,17 @@
+﻿[
+  {
+    "categoryName": "Teknoloji"
+  },
+  {
+    "categoryName": "Kariyer"
+  },
+  {
+    "categoryName": "Eğitim"
+  },
+  {
+    "categoryName": "Kişisel Gelişim"
+  },
+  {
+    "categoryName": "İlham Veren Hikayeler"
+  }
+]

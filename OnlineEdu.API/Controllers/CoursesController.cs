@@ -65,5 +65,12 @@ namespace OnlineEdu.API.Controllers
             _courseService.ADontShowOnHome(id);
             return Ok("Ana Sayfada Gösterilmiyor.");
         }
+        [HttpGet("GetCourseWithTeacherId/{id}")]
+        public IActionResult GetCourseWithTeacherId(int id)
+        {
+            var values = _courseService.AGetCoursesWithCategoryByTeacher(id);
+            var mappedavlues = _mapper.Map<List<ResultCourseDto>>(values);
+            return Ok(mappedavlues);
+        }
     }
 }

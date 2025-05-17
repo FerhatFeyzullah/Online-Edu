@@ -23,5 +23,12 @@ namespace OnlineEdu.DataAccess.Repositories
         {
             return _context.Blogs.Include(x => x.BlogCategory).ToList();
         }
+
+        public List<Blog> GetBlogsWithCategoryByWriter(int id)
+        {
+            var values = _context.Blogs.Include(x => x.BlogCategory).ToList();
+            var filtered = values.Where(x => x.WriterId == id).ToList();
+            return filtered;
+        }
     }
 }

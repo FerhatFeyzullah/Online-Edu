@@ -10,6 +10,7 @@ namespace OnlineEdu.DataAccess.Interface
     public interface ICourseRepository:IRepository<Course>
     {
         List<Course> GetCoursesWithCategory();
+        List<Course> GetCoursesWithCategoryByTeacher(int id);
         void ShowOnHome(int id);
         void DontShowOnHome(int id);
     }

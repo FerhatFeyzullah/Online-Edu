@@ -18,18 +18,29 @@ namespace OnlineEdu.API.Controllers
             var blogs = _mapper.Map<List<ResultBlogDto>>(values);
             return Ok(blogs);
         }
+
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             var blog = _blogService.AGetById(id);
             return Ok(blog);
         }
+
+        [HttpGet("GetBlogsWithCategoryByWriter/{id}")]
+        public IActionResult GetBlogsWithCategoryByWriter(int id)
+        {
+            var values = _blogService.AGetBlogsWithCategoryByWriter(id);
+            var mappedavlues = _mapper.Map<List<ResultBlogDto>>(values);
+            return Ok(mappedavlues);
+        }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             _blogService.ADelete(id);
             return Ok("Blog Silindi");
         }
+
         [HttpPost]
         public IActionResult Create(CreateBlogDto createBlogDto)
         {
@@ -37,6 +48,7 @@ namespace OnlineEdu.API.Controllers
             _blogService.ACreate(value);
             return Ok("Blog Ekleme Basarili.");
         }
+
         [HttpPut]
         public IActionResult Update(UpdateBlogDto updateBlogDto)
         {
@@ -44,6 +56,8 @@ namespace OnlineEdu.API.Controllers
             _blogService.AUpdate(value);
             return Ok("Blog Guncelleme Basarili.");
         }
+
+
         
     }
 }

@@ -1,0 +1,13 @@
+﻿@model List<ResultContactDto>
+
+
+<div class="header-info-left">
+	@foreach (var item in Model)
+	{
+		<ul>
+			<li><i class="ti-email"> @item.Email</i></li>
+			<li><i class="ti-mobile"> @item.Phone</i></li>
+		</ul>
+
+	}
+</div>

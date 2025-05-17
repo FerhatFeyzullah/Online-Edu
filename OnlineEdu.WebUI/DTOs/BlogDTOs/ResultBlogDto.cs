@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OnlineEdu.Entity.Entities;
 using OnlineEdu.WebUI.DTOs.BlogCategoryDTOs;
 
 namespace OnlineEdu.WebUI.DTOs.BlogDTOs
@@ -16,7 +17,9 @@ namespace OnlineEdu.WebUI.DTOs.BlogDTOs
         public DateTime BlogDate { get; set; }
 
         public int BlogCategoryId { get; set; }
-
         public ResultBlogCategoryDto BlogCategory { get; set; }
+
+        public int WriterId { get; set; }
+        public AppUser Writer { get; set; }
     }
 }

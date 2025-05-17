@@ -35,5 +35,12 @@ namespace OnlineEdu.DataAccess.Repositories
             value.IsShown = false;
             _context.SaveChanges();
         }
+
+        public List<Course> GetCoursesWithCategoryByTeacher(int id)
+        {
+            var values = _context.Courses.Include(x => x.CourseCategory).ToList();
+            var filtreted = values.Where(x => x.AppUserId == id).ToList();
+            return filtreted;
+        }
     }
 }

@@ -1,0 +1,22 @@
+﻿@model UpdateTeacherSocialDto
+
+@{
+    ViewData["Title"] = "Hesabı Güncelle";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="TeacherSocialId"/>
+    <input type="hidden" asp-for="TeacherId"/>
+    <label>Sosyal Medya Adı</label>
+    <input asp-for="Name" type="text" class="form-control" />
+    <br />
+    <label>Url</label>
+    <input asp-for="Url" type="text" class="form-control" />
+    <br />
+    <label>İkon</label>
+    <input asp-for="Icon" type="text" class="form-control" />
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>
+

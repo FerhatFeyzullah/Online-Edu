@@ -1,0 +1,167 @@
+﻿[
+  {
+    "title": "Yapay Zeka Eğitimde Devrim Yaratıyor",
+    "content": "Yapay zeka (YZ), son yıllarda eğitim sektöründe köklü değişimlere yol açmıştır. Özellikle kişiselleştirilmiş öğrenme deneyimleri sunabilmesi, öğrencilerin kendi hızlarında öğrenmelerini mümkün kılmaktadır. Öğrenme analitiğiyle öğrencilerin güçlü ve zayıf yönleri belirlenebilmekte ve bu bilgiler doğrultusunda içerikler önerilmektedir. Eğitim platformları, yapay zekayı kullanarak öğrencilere özel ders planları sunmakta, eksiklerini tamamlamalarına yardımcı olmaktadır. Ayrıca sınav ve değerlendirme süreçlerinde de otomasyon sağlayarak öğretmenlerin iş yükünü azaltmakta, daha objektif geri bildirimler sunulmaktadır.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/ai1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 8,
+    "writerId": 3
+  },
+  {
+    "title": "Yeni Mezunlar İçin Kariyer Planlama Rehberi",
+    "content": "Üniversite eğitimini tamamlayan bireyler için iş hayatına atılmak çoğu zaman kafa karıştırıcı olabilir. Bu süreçte atılması gereken adımların başında hedef belirlemek, güçlü ve zayıf yönleri analiz etmek gelir. Özgeçmiş hazırlığı, iş görüşmesi pratiği ve sektörel araştırma bu süreçte önemli rol oynar. Ayrıca, mentorluk desteği almak, çeşitli seminerlere katılmak ve staj imkanlarını değerlendirmek mezunların profesyonel gelişimine katkı sağlar. Kariyer planlaması yaparken bireylerin kendi ilgi alanlarını göz önünde bulundurması ve uzun vadeli hedeflerine uygun stratejiler geliştirmesi oldukça önemlidir.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/career1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 9,
+    "writerId": 5
+  },
+  {
+    "title": "Çevrim İçi Eğitimin Avantajları",
+    "content": "Çevrim içi eğitim, günümüzde zamandan ve mekândan bağımsız öğrenme imkânı sunduğu için giderek daha fazla tercih edilmektedir. Özellikle çalışan bireyler ve farklı şehirlerde yaşayan öğrenciler için büyük kolaylık sağlamaktadır. Online eğitim sayesinde katılımcılar kendi programlarına göre ders izleyebilmekte, canlı ya da kayıtlı içeriklerle öğrenme süreçlerini sürdürebilmektedir. Ayrıca tekrar izleme imkanı, esnek sınav sistemleri ve etkileşimli materyallerle öğrenme deneyimi daha verimli hale gelmektedir. Pandemi süreci ile birlikte hız kazanan bu model, gelecekte de eğitim sisteminin önemli bir parçası olmaya devam edecektir.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/edu1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 10,
+    "writerId": 4
+  },
+  {
+    "title": "Zaman Yönetimi Becerileri Nasıl Gelişir?",
+    "content": "Zaman yönetimi, hem kişisel gelişim hem de profesyonel yaşamda başarıyı yakalamanın temel anahtarlarından biridir. Bu beceriyi geliştirmek için öncelikle günlük hedeflerin belirlenmesi, işleri öncelik sırasına göre düzenlemek gerekir. Ayrıca zaman tuzaklarını tanımak, gereksiz meşguliyetlerden kaçınmak ve belirli aralıklarla mola vermek verimliliği artırır. Planlama araçları ve dijital takvimler bu süreçte oldukça faydalı olabilir. Etkili zaman yönetimi sayesinde stres azalır, yapılması gereken görevler daha kısa sürede tamamlanır ve kişisel hayat ile iş hayatı arasında daha sağlıklı bir denge kurulabilir.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/self1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 11,
+    "writerId": 3
+  },
+  {
+    "title": "Başarıya Giden Yolda İlham Verici Öyküler",
+    "content": "Hayatın farklı alanlarında zorluklara göğüs gererek başarıya ulaşmış bireylerin hikâyeleri, özellikle yeni hedefler belirleyen kişiler için önemli birer motivasyon kaynağı olabilir. Bu tür öyküler, başarıya ulaşmanın tek bir yolu olmadığını ve her bireyin farklı bir süreçten geçtiğini gösterir. Girişimcilerin, sanatçıların veya akademisyenlerin yaşadığı zorluklar ve bu zorlukları aşma yöntemleri, okuyuculara ilham verir. Ayrıca bu hikâyeler kararlılık, azim ve pes etmeme gibi önemli değerlerin ne kadar etkili olduğunu gözler önüne serer. Her bireyin kendi potansiyeline ulaşabileceği bu öykülerle daha iyi anlaşılır.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/story1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 12,
+    "writerId": 5
+  }
+  ]
+
+  /////////////////////Kısa Olanlar/////////////////////
+
+  [
+  {
+    "title": "Yapay Zeka Eğitimde Devrim Yaratıyor",
+    "content": "Yapay zeka destekli öğrenme platformları, öğrenci başarısını artırmada etkili çözümler sunuyor. Özellikle kişiselleştirilmiş eğitim içerikleri büyük ilgi görüyor.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/ai1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 8,
+    "writerId": 3
+  },
+  {
+    "title": "Geleceğin Teknolojileri Nelerdir?",
+    "content": "Metaverse, kuantum bilgisayarlar, yapay zeka ve nesnelerin interneti geleceğimizi şekillendirecek başlıca teknolojiler arasında yer alıyor.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/tech1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 8,
+    "writerId": 4
+  },
+  {
+    "title": "Eğitimde Sanal Gerçeklik Kullanımı",
+    "content": "Sanal gerçeklik teknolojisi ile öğrenciler ders içeriklerini daha etkili ve kalıcı şekilde öğrenebiliyor, sınıf deneyimi yeniden tanımlanıyor.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/vr1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 8,
+    "writerId": 5
+  },
+  {
+    "title": "Yeni Mezunlar İçin Kariyer Planlama Rehberi",
+    "content": "Üniversiteden yeni mezun olanlar için etkili kariyer planlaması yapmanın yolları ve dikkat edilmesi gereken adımları bu yazımızda bulabilirsiniz.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/career1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 9,
+    "writerId": 3
+  },
+  {
+    "title": "LinkedIn Profilinizi Güçlendirme İpuçları",
+    "content": "LinkedIn üzerinden daha fazla iş fırsatı yakalamak için profilinizi nasıl optimize etmeniz gerektiğini öğrenin.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/career2.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 9,
+    "writerId": 5
+  },
+  {
+    "title": "Giriş Seviyesinde En Çok Aranan Meslekler",
+    "content": "Yeni başlayanlar için iş bulmayı kolaylaştıran ve hızla büyüyen sektörlerdeki popüler meslekler bu listede.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/career3.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 9,
+    "writerId": 4
+  },
+  {
+    "title": "Çevrim İçi Eğitimin Avantajları",
+    "content": "Zaman ve mekân bağımsızlığı sağlayan online eğitim sistemleri, özellikle çalışan bireyler için ideal bir seçenek sunuyor.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/edu1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 10,
+    "writerId": 5
+  },
+  {
+    "title": "Ömür Boyu Öğrenmenin Gücü",
+    "content": "Sürekli öğrenme kültürü, bireylerin hem kariyerlerinde hem de kişisel yaşamlarında gelişmelerine katkı sağlıyor.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/edu2.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 10,
+    "writerId": 3
+  },
+  {
+    "title": "Uzaktan Eğitimde Disiplin Nasıl Sağlanır?",
+    "content": "Ev ortamında eğitim alırken dikkat dağınıklığını önlemek ve motivasyonu yüksek tutmak için pratik öneriler burada.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/edu3.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 10,
+    "writerId": 4
+  },
+  {
+    "title": "Zaman Yönetimi Becerileri Nasıl Gelişir?",
+    "content": "Günlük yaşamda, eğitimde ve iş hayatında zamanı verimli kullanmak için uygulayabileceğiniz stratejiler bu içerikte.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/self1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 11,
+    "writerId": 4
+  },
+  {
+    "title": "Güçlü Bir Alışkanlık Nasıl Oluşturulur?",
+    "content": "Başarılı insanların sıklıkla uyguladığı alışkanlık geliştirme tekniklerini öğrenin ve kendi hedeflerinize ulaşın.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/self2.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 11,
+    "writerId": 3
+  },
+  {
+    "title": "Motivasyonunuzu Yüksek Tutmanın Yolları",
+    "content": "Hedeflerinize ulaşırken karşınıza çıkan engellere rağmen motivasyonunuzu nasıl koruyacağınızı keşfedin.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/self3.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 11,
+    "writerId": 5
+  },
+  {
+    "title": "Başarıya Giden Yolda İlham Verici Öyküler",
+    "content": "Zorluklara rağmen başarıya ulaşan kişilerin gerçek hayat öyküleri sizi de motive edecek.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/story1.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 12,
+    "writerId": 4
+  },
+  {
+    "title": "Kadın Girişimcilerin Başarı Hikayeleri",
+    "content": "Farklı sektörlerde başarıyı yakalamış kadın girişimcilerin ilham veren yolculukları.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/story2.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 12,
+    "writerId": 5
+  },
+  {
+    "title": "Engelleri Aşan Gençlerin İlham Veren Hikayeleri",
+    "content": "Sınırlı imkanlara rağmen büyük başarılar elde etmiş gençlerin hayat öyküleri burada.",
+    "imageUrl": "/onlineedu-master/assets/img/blog/story3.jpg",
+    "blogDate": "2025-05-17T15:02:11.476Z",
+    "blogCategoryId": 12,
+    "writerId": 3
+  }
+]

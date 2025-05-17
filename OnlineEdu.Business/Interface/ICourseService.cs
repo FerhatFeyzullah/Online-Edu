@@ -10,6 +10,7 @@ namespace OnlineEdu.Business.Interface
     public interface ICourseService:IGenericService<Course>
     {
         List<Course> AGetCoursesWithCategory();
+        List<Course> AGetCoursesWithCategoryByTeacher(int id);
         void AShowOnHome(int id);
         void ADontShowOnHome(int id);
     }

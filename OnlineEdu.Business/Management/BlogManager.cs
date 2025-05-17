@@ -21,6 +21,11 @@ namespace OnlineEdu.Business.Management
         {
             return _blogRepository.GetBlogsWithCategory();
         }
+
+        public List<Blog> AGetBlogsWithCategoryByWriter(int id)
+        {
+            return _blogRepository.GetBlogsWithCategoryByWriter(id);
+        }
     }
 
 }

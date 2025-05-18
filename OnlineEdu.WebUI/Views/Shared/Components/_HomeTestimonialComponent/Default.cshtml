@@ -1,0 +1,47 @@
+﻿@model List<ResultTestimonialDto>
+
+<div class="testimonial-area fix pt-180 pb-180 section-bg" data-background="/onlineedu-master/assets/img/gallery/section_bg03.png">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-9 col-md-9">
+                <div class="h1-testimonial-active">
+
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="single-testimonial pt-65">
+                            <!-- Testimonial tittle -->
+                            <div class="testimonial-icon mb-45">
+                                <img src="@item.ImageUrl" class="ani-btn " alt="">
+                            </div>
+                            <!-- Testimonial Content -->
+                            <div class="testimonial-caption text-center">
+                                <p>
+                                    @item.Comment
+                                </p>
+                                <!-- Rattion -->
+                                <div class="testimonial-ratting">
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        if (i <= item.Star)
+                                        {
+                                            <i class="fas fa-star text-warning"></i> 
+                                        }
+                                        else
+                                        {
+                                            <i class="far fa-star text-muted"></i> 
+                                        }
+                                    }
+                            </div>
+                            <div class="rattiong-caption">
+                                <span>@item.Name<span> - @item.Title</span> </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

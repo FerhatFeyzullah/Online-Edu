@@ -45,5 +45,11 @@ namespace OnlineEdu.API.Controllers
             _testimonialService.AUpdate(value);
             return Ok("Testimonial Guncelleme Basarili");
         }
+        [HttpGet("GetTestimonialCount")]
+        public IActionResult GetTestimonialCount() 
+        {
+            var value = _testimonialService.ACount();
+            return Ok(value);
+        }
     }
 }

@@ -33,16 +33,13 @@
 				<td>@(item.IsShown ? "Gösteriliyor":"Gösterilmiyor")</td>
 
 				<td>
-					<a asp-area="Admin" asp-controller="CourseCategory" asp-action="UpdateCourseCategory" asp-route-id="@item.CourseCategoryId"
-					class="btn btn-outline-info">Düzenle</a>
-
 					<button onclick="deleteCourseCategoryFunc(@item.CourseCategoryId)" class="btn btn-outline-danger">Sil</button>
+					<a asp-area="Admin" asp-controller="CourseCategory" asp-action="UpdateCourseCategory" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-info">Düzenle</a>					
 				</td>
+
 				<td>
-					<a asp-area="Admin" asp-controller="CourseCategory" asp-action="ShowOnHome" asp-route-id="@item.CourseCategoryId"
-					class="btn btn-outline-success">Göster</a>
-					<a asp-area="Admin" asp-controller="CourseCategory" asp-action="DontShowOnHome" asp-route-id="@item.CourseCategoryId"
-					class="btn btn-outline-secondary">Gösterme</a>
+					<a asp-area="Admin" asp-controller="CourseCategory" asp-action="ShowOnHome" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-success">Göster</a>
+					<a asp-area="Admin" asp-controller="CourseCategory" asp-action="DontShowOnHome" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-secondary">Gösterme</a>					
 				</td>
 
 			</tr>

@@ -38,8 +38,8 @@
 				<td>@item.Item4</td>
 
 				<td>
-					<a asp-area="Admin" asp-controller="About" asp-action="UpdateAbout" asp-route-id="@item.AboutId" class="btn btn-outline-info">Düzenle</a>
-					<a asp-area="Admin" asp-controller="About" asp-action="DeleteAbout" asp-route-id="@item.AboutId" class="btn btn-outline-danger">Sil</a>
+					<button onclick="deleteAboutFunc(@item.AboutId)" class="btn btn-outline-danger">Sil</button>
+					<a asp-area="Admin" asp-controller="About" asp-action="UpdateAbout" asp-route-id="@item.AboutId" class="btn btn-outline-info">Düzenle</a>					
 				</td>
 
 			</tr>
@@ -50,3 +50,24 @@
 <a asp-area="Admin" asp-controller="About" asp-action="CreateAbout" class="btn btn-outline-primary">Yeni Hakkımda Ekle</a>
 
 	
+<script>
+	function deleteAboutFunc(id)
+	{
+		Swal.fire({
+	  title: "Silmek istediğine emin misin?",
+	  text: "Bu işlemi geri alamazsın!",
+	  icon: "warning",
+	  showCancelButton: true,
+	  confirmButtonColor: "#3085d6",
+	  cancelButtonColor: "#d33",
+	  confirmButtonText: "Evet, Sil!",
+	  cancelButtonText: "Iptal"
+	}).then((result) => {
+	  if (result.isConfirmed) {
+		window.location.href = "/Admin/About/DeleteAbout/"+id;
+	  }
+	});
+	}
+
+
+</script>

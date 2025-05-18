@@ -34,9 +34,8 @@
 				<td>@item.Address</td>
 
 				<td>
-					<a asp-area="Admin" asp-controller="Contact" asp-action="UpdateContact" asp-route-id="@item.ContactId" class="btn btn-outline-info">Düzenle</a>
-
 					<button onclick="deleteContactFunc(@item.ContactId)" class="btn btn-outline-danger">Sil</button>
+					<a asp-area="Admin" asp-controller="Contact" asp-action="UpdateContact" asp-route-id="@item.ContactId" class="btn btn-outline-info">Düzenle</a>					
 				</td>
 
 			</tr>

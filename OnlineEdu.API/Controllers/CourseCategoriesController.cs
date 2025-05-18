@@ -65,5 +65,11 @@ namespace OnlineEdu.API.Controllers
             _courseCategoryService.ADontShowOnHome(id);
             return Ok("Ana Sayfada Gösterilmiyor.");
         }
+        [HttpGet("GetCourseCategoryCount")]
+        public IActionResult GetCourseCategoryCount()
+        {
+            var value = _courseCategoryService.ACount();
+            return Ok(value);
+        }
     }
 }

@@ -28,8 +28,8 @@
 				<td><img src="@item.ImageUrl" alt="Resim" style="width: 75px; height: 75px;" /></td>
 				
 				<td>
+					<button onclick="deleteBannerFunc(@item.BannerId)" class="btn btn-outline-danger">Sil</button>
 					<a asp-area="Admin" asp-controller="Banner" asp-action="UpdateBanner" asp-route-id="@item.BannerId" class="btn btn-outline-info">Düzenle</a>
-					<a asp-area="Admin" asp-controller="Banner" asp-action="DeleteBanner" asp-route-id="@item.BannerId" class="btn btn-outline-danger">Sil</a>
 				</td>
 
 			</tr>
@@ -40,3 +40,24 @@
 <a asp-area="Admin" asp-controller="Banner" asp-action="CreateBanner" class="btn btn-outline-primary">Yeni Banner Ekle</a>
 
 
+<script>
+	function deleteBannerFunc(id)
+	{
+		Swal.fire({
+	  title: "Silmek istediğine emin misin?",
+	  text: "Bu işlemi geri alamazsın!",
+	  icon: "warning",
+	  showCancelButton: true,
+	  confirmButtonColor: "#3085d6",
+	  cancelButtonColor: "#d33",
+	  confirmButtonText: "Evet, Sil!",
+	  cancelButtonText: "İptal"
+	}).then((result) => {
+	  if (result.isConfirmed) {
+		window.location.href = "/Admin/Banner/DeleteBanner/"+id;
+	  }
+	});
+	}
+
+
+</script>

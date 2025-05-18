@@ -34,9 +34,8 @@
 				<td>@item.BlogCategory.CategoryName</td>
 
 				<td>
-					<a asp-area="Admin" asp-controller="Blog" asp-action="UpdateBlog" asp-route-id="@item.BlogId" class="btn btn-outline-info">Düzenle</a>
-
 					<button onclick="deleteBlogFunc(@item.BlogId)" class="btn btn-outline-danger">Sil</button>
+					<a asp-area="Admin" asp-controller="Blog" asp-action="UpdateBlog" asp-route-id="@item.BlogId" class="btn btn-outline-info">Düzenle</a>
 				</td>
 
 			</tr>

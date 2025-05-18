@@ -297,6 +297,16 @@
   },
   {
     "ContainingType": "OnlineEdu.API.Controllers.BlogsController",
+    "Method": "GetBlogCount",
+    "RelativePath": "api/Blogs/GetBlogCount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.BlogsController",
     "Method": "GetBlogsWithCategoryByWriter",
     "RelativePath": "api/Blogs/GetBlogsWithCategoryByWriter/{id}",
     "HttpMethod": "GET",
@@ -309,6 +319,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.BlogsController",
+    "Method": "GetLast4Blogs",
+    "RelativePath": "api/Blogs/GetLast4Blogs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -487,6 +507,16 @@
   },
   {
     "ContainingType": "OnlineEdu.API.Controllers.CourseCategoriesController",
+    "Method": "GetCourseCategoryCount",
+    "RelativePath": "api/CourseCategories/GetCourseCategoryCount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseCategoriesController",
     "Method": "ShowOnHome",
     "RelativePath": "api/CourseCategories/ShowOnHome/{id}",
     "HttpMethod": "GET",
@@ -595,6 +625,16 @@
     "ContainingType": "OnlineEdu.API.Controllers.CoursesController",
     "Method": "GetActiveCourse",
     "RelativePath": "api/Courses/GetActiveCourse",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CoursesController",
+    "Method": "GetCourseCount",
+    "RelativePath": "api/Courses/GetCourseCount",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1007,6 +1047,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.TestimonialsController",
+    "Method": "GetTestimonialCount",
+    "RelativePath": "api/Testimonials/GetTestimonialCount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

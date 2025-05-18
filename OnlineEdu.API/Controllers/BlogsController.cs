@@ -26,6 +26,14 @@ namespace OnlineEdu.API.Controllers
             return Ok(blog);
         }
 
+        [HttpGet("GetLast4Blogs")]
+        public IActionResult GetLast4Blogs()
+        {
+            var values = _blogService.AGetLast4BlogWithCategory();
+            var mappedvalues = _mapper.Map<List<ResultBlogDto>>(values);
+            return Ok(mappedvalues);
+        }
+
         [HttpGet("GetBlogsWithCategoryByWriter/{id}")]
         public IActionResult GetBlogsWithCategoryByWriter(int id)
         {
@@ -56,8 +64,13 @@ namespace OnlineEdu.API.Controllers
             _blogService.AUpdate(value);
             return Ok("Blog Guncelleme Basarili.");
         }
+        [HttpGet("GetBlogCount")]
+        public IActionResult GetBlogCount()
+        {
+            var value = _blogService.ACount();
+            return Ok(value);
+        }
 
 
-        
     }
 }

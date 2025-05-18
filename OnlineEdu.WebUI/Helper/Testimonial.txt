@@ -1,0 +1,37 @@
+﻿[
+  {
+    "name": "Ayşe Yıldız",
+    "title": "Öğrenci",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/testimonial.png",
+    "comment": "Bu eğitim platformu sayesinde eksiklerimi hızla tamamladım.",
+    "star": 5
+  },
+  {
+    "name": "Mehmet Kaya",
+    "title": "Öğrenci",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/testimonial.png",
+    "comment": "Etkileşimli dersler ve kaliteli içerikler gerçekten harika.",
+    "star": 4
+  },
+  {
+    "name": "Zeynep Demir",
+    "title": "Öğrenci",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/testimonial.png",
+    "comment": "Platformun kullanıcı dostu arayüzü beni çok etkiledi.",
+    "star": 5
+  },
+  {
+    "name": "Emre Arslan",
+    "title": "Öğrenci",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/testimonial.png",
+    "comment": "Gerçek hayat projeleriyle öğrenmek çok daha kolay oldu.",
+    "star": 4
+  },
+  {
+    "name": "Elif Çetin",
+    "title": "Öğrenci",
+    "imageUrl": "/onlineedu-master/assets/img/gallery/testimonial.png",
+    "comment": "Derslerin içeriği oldukça güncel ve bilgilendirici.",
+    "star": 5
+  }
+]

@@ -10,6 +10,8 @@ namespace OnlineEdu.DataAccess.Interface
     public interface IBlogRepository : IRepository<Blog>
     {
         List<Blog> GetBlogsWithCategory();
+        List<Blog> GetLast4BlogWithCategory();
+
         List<Blog> GetBlogsWithCategoryByWriter(int id);
     }
 }

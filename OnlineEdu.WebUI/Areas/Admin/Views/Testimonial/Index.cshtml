@@ -1,0 +1,64 @@
+﻿@model List<ResultTestimonialDto>
+
+@{
+    ViewData["Title"] = "Referanslar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+	int count = 0;
+}
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Ad Soyad</th>
+			<th>Unvan</th>
+			<th></th>
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			count++;
+			<tr>
+				<td>@count</td>
+				<td>@item.Name</td>
+				<td>@item.Title</td>
+
+				<td>
+					<button onclick="deleteTestimonialFunc(@item.TestimonialId)" class="btn btn-outline-danger">Sil</button>
+					<a asp-area="Admin" asp-controller="Testimonial" asp-action="UpdateTestimonial" asp-route-id="@item.TestimonialId" class="btn btn-outline-info">Düzenle</a>
+				</td>
+
+			</tr>
+		}
+	</tbody>
+</table>
+
+<a asp-area="Admin" asp-controller="Testimonial" asp-action="CreateTestimonial" class="btn btn-outline-primary">Yeni Referans Ekle Ekle</a>
+
+<script>
+	function deleteTestimonialFunc(id)
+	{
+		Swal.fire({
+	  title: "Silmek istediğine emin misin?",
+	  text: "Bu işlemi geri alamazsın!",
+	  icon: "warning",
+	  showCancelButton: true,
+	  confirmButtonColor: "#3085d6",
+	  cancelButtonColor: "#d33",
+	  confirmButtonText: "Evet, Sil!",
+	  cancelButtonText: "Iptal"
+	}).then((result) => {
+	  if (result.isConfirmed) {
+		window.location.href = "/Admin/Testimonial/DeleteTestimonial/"+id;
+	  }
+	});
+	}
+
+
+</script>
+

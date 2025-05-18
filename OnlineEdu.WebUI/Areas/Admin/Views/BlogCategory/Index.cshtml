@@ -26,12 +26,11 @@
 			<tr>
 				<td>@count</td>
 				<td>@item.CategoryName</td>
-				
+
 
 				<td>
-					<a asp-area="Admin" asp-controller="BlogCategory" asp-action="UpdateBlogCategory" asp-route-id="@item.BlogCategoryId" class="btn btn-outline-info">Düzenle</a>
-
 					<button onclick="deleteBlogCategoryFunc(@item.BlogCategoryId)" class="btn btn-outline-danger">Sil</button>
+					<a asp-area="Admin" asp-controller="BlogCategory" asp-action="UpdateBlogCategory" asp-route-id="@item.BlogCategoryId" class="btn btn-outline-info">Düzenle</a>					
 				</td>
 
 			</tr>

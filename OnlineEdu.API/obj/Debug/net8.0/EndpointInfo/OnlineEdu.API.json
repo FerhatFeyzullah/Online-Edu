@@ -461,6 +461,18 @@
         }
       }
     },
+    "/api/Blogs/GetLast4Blogs": {
+      "get": {
+        "tags": [
+          "Blogs"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Blogs/GetBlogsWithCategoryByWriter/{id}": {
       "get": {
         "tags": [
@@ -476,6 +488,18 @@
               "format": "int32"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Blogs/GetBlogCount": {
+      "get": {
+        "tags": [
+          "Blogs"
         ],
         "responses": {
           "200": {
@@ -770,6 +794,18 @@
         }
       }
     },
+    "/api/CourseCategories/GetCourseCategoryCount": {
+      "get": {
+        "tags": [
+          "CourseCategories"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Courses": {
       "get": {
         "tags": [
@@ -957,6 +993,18 @@
               "format": "int32"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Courses/GetCourseCount": {
+      "get": {
+        "tags": [
+          "Courses"
         ],
         "responses": {
           "200": {
@@ -1540,6 +1588,18 @@
               "format": "int32"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Testimonials/GetTestimonialCount": {
+      "get": {
+        "tags": [
+          "Testimonials"
         ],
         "responses": {
           "200": {

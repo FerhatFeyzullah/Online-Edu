@@ -30,5 +30,11 @@ namespace OnlineEdu.DataAccess.Repositories
             var filtered = values.Where(x => x.WriterId == id).ToList();
             return filtered;
         }
+
+        public List<Blog> GetLast4BlogWithCategory()
+        {
+            var values = _context.Blogs.Include(x=>x.BlogCategory).OrderByDescending(x => x.BlogId).Take(4).ToList();
+            return values;
+        }
     }
 }

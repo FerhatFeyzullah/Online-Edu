@@ -465,7 +465,7 @@ namespace OnlineEdu.DataAccess.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("CourseRegister");
+                    b.ToTable("CourseRegisters");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Message", b =>

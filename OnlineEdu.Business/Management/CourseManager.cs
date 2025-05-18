@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using OnlineEdu.Business.Interface;
@@ -27,6 +28,15 @@ namespace OnlineEdu.Business.Management
             return _courseRepository.GetCoursesWithCategory();
         }
 
+        public List<Course> AGetCoursesWithCategory(Expression<Func<Course, bool>> filter)
+        {
+            return _courseRepository.GetCoursesWithCategory(filter);
+        }
+
+        public List<Course> AGetCoursesWithCategoryAndWithTeacher()
+        {
+            return _courseRepository.GetCoursesWithCategoryAndWithTeacher();
+        }
 
         public List<Course> AGetCoursesWithCategoryByTeacher(int id)
         {

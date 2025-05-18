@@ -11,10 +11,17 @@ namespace OnlineEdu.API.Controllers
     [ApiController]
     public class CoursesController(ICourseService _courseService, IMapper _mapper) : ControllerBase
     {
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("GetCoursesWithEverythingById/{id}")]
+        public IActionResult GetCoursesWithEverythingById(int id)
         {
-            var values = _courseService.AGetCoursesWithCategory();
+            var values = _courseService.AGetCoursesWithCategory(x=>x.CourseCategoryId==id);
+            var categories = _mapper.Map<List<ResultCourseDto>>(values);
+            return Ok(categories);
+        }
+        [HttpGet("GetCoursesWithCategoryAndWithTeacher")]
+        public IActionResult GetCoursesWithCategoryAndWithTeacher()
+        {
+            var values = _courseService.AGetCoursesWithCategoryAndWithTeacher();
             var categories = _mapper.Map<List<ResultCourseDto>>(values);
             return Ok(categories);
         }

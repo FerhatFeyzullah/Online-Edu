@@ -532,13 +532,83 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "OnlineEdu.API.Controllers.CoursesController",
-    "Method": "Get",
-    "RelativePath": "api/Courses",
+    "ContainingType": "OnlineEdu.API.Controllers.CourseRegistersController",
+    "Method": "RegisterToCourse",
+    "RelativePath": "api/CourseRegisters",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OnlineEdu.DTO.DTOs.CourseRegisterDTOs.CreateCourseRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseRegistersController",
+    "Method": "UpdateCourseRegister",
+    "RelativePath": "api/CourseRegisters",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "OnlineEdu.DTO.DTOs.CourseRegisterDTOs.CreateCourseRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseRegistersController",
+    "Method": "Delete",
+    "RelativePath": "api/CourseRegisters",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseRegistersController",
+    "Method": "GetById",
+    "RelativePath": "api/CourseRegisters/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseRegistersController",
+    "Method": "GetMyCourses",
+    "RelativePath": "api/CourseRegisters/GetMyCourses/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -639,6 +709,32 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CoursesController",
+    "Method": "GetCoursesWithCategoryAndWithTeacher",
+    "RelativePath": "api/Courses/GetCoursesWithCategoryAndWithTeacher",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CoursesController",
+    "Method": "GetCoursesWithEverythingById",
+    "RelativePath": "api/Courses/GetCoursesWithEverythingById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

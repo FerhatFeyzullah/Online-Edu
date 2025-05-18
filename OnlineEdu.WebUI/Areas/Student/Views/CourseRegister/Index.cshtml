@@ -1,0 +1,69 @@
+﻿@model List<ResultCourseRegisterDto>
+
+@{
+    ViewData["Title"] = "Kayıtlı Olduğum Kurslar";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+@{
+	int count = 0;
+}
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Kurs Adı</th>
+			<th>Resmi</th>
+			<th>Kurs Kategorisi</th>
+			<th>Ücret</th>
+
+			<th></th>
+
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			count++;
+			<tr>
+				<td>@count</td>
+				<td>@item.Course.CourseName</td>
+				<td><img src="@item.Course.ImageUrl" style="width:75px;height:75px;" /> </td>
+				<td>@item.Course.CourseCategory.CategoryName</td>
+				<td>@item.Course.Price ₺</td>
+				<td>
+
+					<button onclick="deleteRegisterCourseFunc(@item.CourseRegisterId)" class="btn btn-outline-danger">Kaydımı Sil</button>
+				</td>
+
+			</tr>
+		}
+	</tbody>
+</table>
+
+<a asp-area="Student" asp-controller="CourseRegister" asp-action="RegisterCourse" class="btn btn-outline-primary">Yeni Kursa Kaydol</a>
+
+<script>
+	function deleteRegisterCourseFunc(id)
+	{
+		Swal.fire({
+	  title: "Silmek istediğine emin misin?",
+	  text: "Bu işlemi geri alamazsın!",
+	  icon: "warning",
+	  showCancelButton: true,
+	  confirmButtonColor: "#3085d6",
+	  cancelButtonColor: "#d33",
+	  confirmButtonText: "Evet, Sil!",
+	  cancelButtonText: "Iptal"
+	}).then((result) => {
+	  if (result.isConfirmed) {
+		window.location.href = "/Student/CourseRegister/DeleteCourseRegister/"+id;
+	  }
+	});
+	}
+
+
+</script>
+

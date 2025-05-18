@@ -19,5 +19,9 @@ namespace OnlineEdu.DTO.DTOs.CourseDTOs
         public ResultCourseCategoryDto ?CourseCategory { get; set; }
         public int AppUserId { get; set; }
 
+        public AppUser AppUser { get; set; }
+
+
+
     }
 }

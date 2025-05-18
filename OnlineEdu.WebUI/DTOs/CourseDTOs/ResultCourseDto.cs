@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OnlineEdu.Entity.Entities;
 using OnlineEdu.WebUI.DTOs.CourseCategoryDTOs;
+using OnlineEdu.WebUI.DTOs.UserDTOs;
 
 
 namespace OnlineEdu.WebUI.DTOs.CourseDTOs
@@ -19,5 +21,6 @@ namespace OnlineEdu.WebUI.DTOs.CourseDTOs
 
         public ResultCourseCategoryDto CourseCategory { get; set; }
         public int AppUserId { get; set; }
+        public ResultUserDto AppUser { get; set; }
     }
 }

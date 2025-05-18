@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,24 @@ namespace OnlineEdu.DataAccess.Repositories
             var values = _context.Courses.Include(x => x.CourseCategory).ToList();
             var filtreted = values.Where(x => x.AppUserId == id).ToList();
             return filtreted;
+        }
+
+        public List<Course> GetCoursesWithCategory(Expression<Func<Course, bool>> filter)
+        {
+            //Metot OverLoad (uuuuu)
+            IQueryable<Course> values = _context.Courses.Include(x => x.CourseCategory).Include(x=>x.AppUser).AsQueryable();
+            if (filter != null)
+            {
+                values = values.Where(filter);
+            }
+           return values.ToList();
+        }
+
+        public List<Course> GetCoursesWithCategoryAndWithTeacher()
+        {
+            var values = _context.Courses.Include(x => x.CourseCategory).Include(x=>x.AppUser).ToList();
+            
+            return values;
         }
     }
 }

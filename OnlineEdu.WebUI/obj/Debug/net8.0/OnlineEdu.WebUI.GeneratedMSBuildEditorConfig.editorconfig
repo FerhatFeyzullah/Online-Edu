@@ -216,6 +216,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Views/Blog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Views/Course/GetCoursesByCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEdldENvdXJzZXNCeUNhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -234,6 +242,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Views/Register/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Views/Shared/Components/_BlogAllBlogs/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Jsb2dBbGxCbG9nc1xEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Views/Shared/Components/_HomeAboutComponent/Default.cshtml]
@@ -298,6 +310,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Views/Teacher/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Views/_ViewImports.cshtml]

@@ -13,7 +13,7 @@ namespace OnlineEdu.WebUI.ViewComponents
         private readonly HttpClient _client = HttpClientHelper.CreateClient();
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var values = await _userService.GetTeachers();
+            var values = await _userService.Get3Teachers();
             return View(values);
         }
     }

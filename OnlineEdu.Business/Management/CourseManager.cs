@@ -28,7 +28,7 @@ namespace OnlineEdu.Business.Management
             return _courseRepository.GetCoursesWithCategory();
         }
 
-        public List<Course> AGetCoursesWithCategory(Expression<Func<Course, bool>> filter)
+        public List<Course> AGetCoursesWithCategory(Expression<Func<Course, bool>> filter=null)
         {
             return _courseRepository.GetCoursesWithCategory(filter);
         }

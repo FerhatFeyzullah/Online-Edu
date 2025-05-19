@@ -21,7 +21,8 @@ namespace OnlineEdu.DataAccess.Repositories
 
         public List<Blog> GetBlogsWithCategory()
         {
-            return _context.Blogs.Include(x => x.BlogCategory).ToList();
+            var blogs = _context.Blogs.Include(x => x.BlogCategory).Include(x=>x.Writer).ToList();
+            return blogs;
         }
 
         public List<Blog> GetBlogsWithCategoryByWriter(int id)

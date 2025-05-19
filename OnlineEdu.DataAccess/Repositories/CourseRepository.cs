@@ -44,7 +44,7 @@ namespace OnlineEdu.DataAccess.Repositories
             return filtreted;
         }
 
-        public List<Course> GetCoursesWithCategory(Expression<Func<Course, bool>> filter)
+        public List<Course> GetCoursesWithCategory(Expression<Func<Course, bool>> filter=null)
         {
             //Metot OverLoad (uuuuu)
             IQueryable<Course> values = _context.Courses.Include(x => x.CourseCategory).Include(x=>x.AppUser).AsQueryable();

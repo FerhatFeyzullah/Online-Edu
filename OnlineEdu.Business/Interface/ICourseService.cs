@@ -12,7 +12,7 @@ namespace OnlineEdu.Business.Interface
     {
         List<Course> AGetCoursesWithCategory();
         List<Course> AGetCoursesWithCategoryAndWithTeacher();
-        List<Course> AGetCoursesWithCategory(Expression<Func<Course, bool>> filter);
+        List<Course> AGetCoursesWithCategory(Expression<Func<Course, bool>> filter=null);
         List<Course> AGetCoursesWithCategoryByTeacher(int id);
         void AShowOnHome(int id);
         void ADontShowOnHome(int id);

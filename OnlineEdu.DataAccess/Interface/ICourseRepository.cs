@@ -12,7 +12,7 @@ namespace OnlineEdu.DataAccess.Interface
     {
         List<Course> GetCoursesWithCategory();
         List<Course> GetCoursesWithCategoryAndWithTeacher();
-        List<Course> GetCoursesWithCategory(Expression<Func<Course,bool>> filter);
+        List<Course> GetCoursesWithCategory(Expression<Func<Course,bool>> filter=null);
         List<Course> GetCoursesWithCategoryByTeacher(int id);
         void ShowOnHome(int id);
         void DontShowOnHome(int id);

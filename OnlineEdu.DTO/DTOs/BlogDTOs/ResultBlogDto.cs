@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OnlineEdu.DTO.DTOs.AppUserDTOs;
 using OnlineEdu.DTO.DTOs.BlogCategoryDTOs;
 using OnlineEdu.Entity.Entities;
 
@@ -20,6 +21,6 @@ namespace OnlineEdu.DTO.DTOs.BlogDTOs
         public ResultBlogCategoryDto BlogCategory { get; set; }
 
         public int WriterId { get; set; }
-        public AppUser Writer { get; set; }
+        public ResultAppUserDto Writer { get; set; }
     }
 }

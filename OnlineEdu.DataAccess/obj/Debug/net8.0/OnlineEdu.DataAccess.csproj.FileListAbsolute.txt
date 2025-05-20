@@ -16,3 +16,5 @@ C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\n
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net8.0\ref\OnlineEdu.DataAccess.dll
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.DataAccess\bin\Debug\net8.0\OnlineEdu.DataAccess.runtimeconfig.json
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.DataAccess\obj\Debug\net8.0\OnlineEdu.DataAccess.genruntimeconfig.cache
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.DataAccess\bin\Debug\net8.0\OnlineEdu.DTO.dll
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.DataAccess\bin\Debug\net8.0\OnlineEdu.DTO.pdb

@@ -16,3 +16,5 @@ C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.Business\obj\Debug\net
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.Business\obj\Debug\net8.0\refint\OnlineEdu.Business.dll
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.Business\obj\Debug\net8.0\OnlineEdu.Business.pdb
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.Business\obj\Debug\net8.0\ref\OnlineEdu.Business.dll
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.Business\bin\Debug\net8.0\OnlineEdu.DTO.dll
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.Business\bin\Debug\net8.0\OnlineEdu.DTO.pdb

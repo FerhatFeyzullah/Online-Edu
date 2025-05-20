@@ -2927,6 +2927,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "OnlineEdu.DTO": "1.0.0",
           "OnlineEdu.Entity": "1.0.0"
         },
         "compile": {
@@ -2934,6 +2935,19 @@
         },
         "runtime": {
           "bin/placeholder/OnlineEdu.DataAccess.dll": {}
+        }
+      },
+      "OnlineEdu.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "OnlineEdu.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OnlineEdu.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OnlineEdu.DTO.dll": {}
         }
       },
       "OnlineEdu.Entity/1.0.0": {
@@ -8006,6 +8020,11 @@
       "type": "project",
       "path": "../OnlineEdu.DataAccess/OnlineEdu.DataAccess.csproj",
       "msbuildProject": "../OnlineEdu.DataAccess/OnlineEdu.DataAccess.csproj"
+    },
+    "OnlineEdu.DTO/1.0.0": {
+      "type": "project",
+      "path": "../OnlineEdu.DTO/OnlineEdu.DTO.csproj",
+      "msbuildProject": "../OnlineEdu.DTO/OnlineEdu.DTO.csproj"
     },
     "OnlineEdu.Entity/1.0.0": {
       "type": "project",

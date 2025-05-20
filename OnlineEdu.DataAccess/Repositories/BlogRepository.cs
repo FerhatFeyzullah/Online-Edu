@@ -17,11 +17,22 @@ namespace OnlineEdu.DataAccess.Repositories
         { 
             
         }
-        
+
+        public List<Blog> GetBlogsByCategoryId(int id)
+        {
+            var blogs = _context.Blogs.Include(x => x.BlogCategory).Include(x => x.Writer).Where(x => x.BlogCategoryId == id).ToList();
+            return blogs;
+        }
 
         public List<Blog> GetBlogsWithCategory()
         {
             var blogs = _context.Blogs.Include(x => x.BlogCategory).Include(x=>x.Writer).ToList();
+            return blogs;
+        }
+
+        public Blog GetBlogsWithCategory(int id)
+        {
+            var blogs = _context.Blogs.Include(x => x.BlogCategory).Include(x => x.Writer).ThenInclude(x=>x.TeacherSocials).FirstOrDefault(x => x.BlogId == id);
             return blogs;
         }
 

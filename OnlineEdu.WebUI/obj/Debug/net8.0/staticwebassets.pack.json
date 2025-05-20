@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.WebUI\\wwwroot\\js\\JavaScript.js",
+      "PackagePath": "staticwebassets\\js\\JavaScript.js"
+    },
+    {
       "Id": "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.WebUI\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

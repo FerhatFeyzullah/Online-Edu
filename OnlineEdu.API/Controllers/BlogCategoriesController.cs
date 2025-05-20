@@ -9,7 +9,7 @@ namespace OnlineEdu.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BlogCategoriesController(IGenericService<BlogCategory> _blogCategoryService, IMapper _mapper) : ControllerBase
+    public class BlogCategoriesController(IBlogCategoryService _blogCategoryService, IMapper _mapper) : ControllerBase
     {
         [HttpGet]
         public IActionResult Get()
@@ -17,7 +17,15 @@ namespace OnlineEdu.API.Controllers
             var values = _blogCategoryService.AGetList();
             var mappedvalues = _mapper.Map<List<ResultBlogCategoryDto>>(values);
             return Ok(mappedvalues);
-        }       
+        }
+
+        [HttpGet("GetCategoriesWithBlogs")]
+        public IActionResult GetCategoriesWithBlogs()
+        {
+            var values = _blogCategoryService.AGetAllCategoryWithBlogs();
+            return Ok(values);
+        }
+
 
         [HttpGet("{id}")]
         public IActionResult Get(int id)

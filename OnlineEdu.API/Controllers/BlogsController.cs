@@ -22,7 +22,7 @@ namespace OnlineEdu.API.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var blog = _blogService.AGetById(id);
+            var blog = _blogService.AGetBlogsWithCategory(id);
             return Ok(blog);
         }
 
@@ -68,6 +68,13 @@ namespace OnlineEdu.API.Controllers
         public IActionResult GetBlogCount()
         {
             var value = _blogService.ACount();
+            return Ok(value);
+        }
+
+        [HttpGet("GetBlogsByCategoryId/{id}")]
+        public IActionResult GetBlogsByCategoryId(int id)
+        {
+            var value = _blogService.AGetBlogsByCategoryId(id);
             return Ok(value);
         }
 

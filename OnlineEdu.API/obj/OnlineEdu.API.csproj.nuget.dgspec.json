@@ -144,6 +144,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -192,6 +198,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.DTO\\OnlineEdu.DTO.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.DTO\\OnlineEdu.DTO.csproj"
+              },
               "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.Entity\\OnlineEdu.Entity.csproj": {
                 "projectPath": "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.Entity\\OnlineEdu.Entity.csproj"
               }

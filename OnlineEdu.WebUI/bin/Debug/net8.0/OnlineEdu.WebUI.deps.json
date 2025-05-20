@@ -2133,10 +2133,22 @@
       },
       "OnlineEdu.DataAccess/1.0.0": {
         "dependencies": {
+          "OnlineEdu.DTO": "1.0.0",
           "OnlineEdu.Entity": "1.0.0"
         },
         "runtime": {
           "OnlineEdu.DataAccess.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "OnlineEdu.DTO/1.0.0": {
+        "dependencies": {
+          "OnlineEdu.Entity": "1.0.0"
+        },
+        "runtime": {
+          "OnlineEdu.DTO.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -3333,6 +3345,11 @@
       "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
     },
     "OnlineEdu.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OnlineEdu.DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -11,6 +11,7 @@ namespace OnlineEdu.API.Mapping
             CreateMap<BlogCategory,CreateBlogCategoryDto>().ReverseMap();
             CreateMap<BlogCategory,UpdateBlogCategoryDto>().ReverseMap();
             CreateMap<BlogCategory,ResultBlogCategoryDto>().ReverseMap();
+            CreateMap<BlogCategory, CategoryWithBlogsDto>().ReverseMap();
 
         }
     }

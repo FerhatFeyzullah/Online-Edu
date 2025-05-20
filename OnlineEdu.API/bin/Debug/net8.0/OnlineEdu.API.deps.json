@@ -1152,6 +1152,7 @@
       },
       "OnlineEdu.Business/1.0.0": {
         "dependencies": {
+          "AutoMapper": "14.0.0",
           "OnlineEdu.DataAccess": "1.0.0"
         },
         "runtime": {
@@ -1163,6 +1164,7 @@
       },
       "OnlineEdu.DataAccess/1.0.0": {
         "dependencies": {
+          "OnlineEdu.DTO": "1.0.0",
           "OnlineEdu.Entity": "1.0.0"
         },
         "runtime": {

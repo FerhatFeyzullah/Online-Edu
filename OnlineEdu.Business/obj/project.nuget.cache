@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Ln7giZ5XaMw=",
+  "dgSpecHash": "BNkjgH6Il/Q=",
   "success": true,
   "projectFilePath": "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.Business\\OnlineEdu.Business.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.16\\microsoft.aspnetcore.cryptography.internal.8.0.16.nupkg.sha512",

@@ -1678,6 +1678,19 @@
           }
         }
       },
+      "OnlineEdu.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "OnlineEdu.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OnlineEdu.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OnlineEdu.DTO.dll": {}
+        }
+      },
       "OnlineEdu.Entity/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -4870,6 +4883,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "OnlineEdu.DTO/1.0.0": {
+      "type": "project",
+      "path": "../OnlineEdu.DTO/OnlineEdu.DTO.csproj",
+      "msbuildProject": "../OnlineEdu.DTO/OnlineEdu.DTO.csproj"
+    },
     "OnlineEdu.Entity/1.0.0": {
       "type": "project",
       "path": "../OnlineEdu.Entity/OnlineEdu.Entity.csproj",
@@ -4879,6 +4897,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.EntityFrameworkCore.Design >= 9.0.5",
+      "OnlineEdu.DTO >= 1.0.0",
       "OnlineEdu.Entity >= 1.0.0"
     ]
   },
@@ -4914,6 +4933,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.DTO\\OnlineEdu.DTO.csproj": {
+              "projectPath": "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.DTO\\OnlineEdu.DTO.csproj"
+            },
             "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.Entity\\OnlineEdu.Entity.csproj": {
               "projectPath": "C:\\Users\\Dell\\Desktop\\DOTNET Projects\\OnlineEdu\\OnlineEdu.Entity\\OnlineEdu.Entity.csproj"
             }

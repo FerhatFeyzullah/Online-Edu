@@ -297,3 +297,5 @@ C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.WebUI\bin\Debug\net8.0
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.WebUI\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.WebUI\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.WebUI\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.WebUI\bin\Debug\net8.0\OnlineEdu.DTO.dll
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.WebUI\bin\Debug\net8.0\OnlineEdu.DTO.pdb

@@ -303,6 +303,18 @@
         }
       }
     },
+    "/api/BlogCategories/GetCategoriesWithBlogs": {
+      "get": {
+        "tags": [
+          "BlogCategories"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/BlogCategories/{id}": {
       "get": {
         "tags": [
@@ -500,6 +512,29 @@
       "get": {
         "tags": [
           "Blogs"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Blogs/GetBlogsByCategoryId/{id}": {
+      "get": {
+        "tags": [
+          "Blogs"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {

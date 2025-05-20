@@ -6,6 +6,7 @@ using OnlineEdu.DataAccess.Interface;
 using OnlineEdu.DataAccess.Repositories;
 using System.Reflection;
 using OnlineEdu.API.Extensions;
+using OnlineEdu.Business.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddServiceExtensions();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddAutoMapper(typeof(BusinessMapping).Assembly);
+
 
 builder.Services.AddDbContext<OnlineEduContext>(options =>
 {

@@ -15,11 +15,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddServiceExtensions();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddAutoMapper(typeof(BusinessMapping).Assembly);
+builder.Services.AddAutoMapper(typeof(CourseVideoMapping).Assembly);
 
 
 builder.Services.AddDbContext<OnlineEduContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
+
 });
 
 builder.Services.AddControllers();

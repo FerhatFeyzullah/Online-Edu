@@ -17,6 +17,6 @@ namespace OnlineEdu.WebUI.DTOs.CourseCategoryDTOs
         public string Description { get; set; }
         public bool IsShown { get; set; }
 
-        public List<ResultCourseDto> Courses { get; set; }
+       
     }
 }

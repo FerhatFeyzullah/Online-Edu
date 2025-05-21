@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineEdu.Entity.Entities;
 using OnlineEdu.WebUI.DTOs.UserDTOs;
+using OnlineEdu.WebUI.Models;
 using OnlineEdu.WebUI.Services.UserService;
 
 namespace OnlineEdu.WebUI.Areas.Admin.Controllers
@@ -14,9 +15,25 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
     {
         public async Task<IActionResult> Index()
         {
-            var values = await _userService.GetAllUserAsync();
-            return View(values);
+            var users = await _userService.GetAllUserAsync();
+            var userViewModels = new List<UserViewModel>();
+
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+
+                userViewModels.Add(new UserViewModel
+                {
+                    Id = user.Id,
+                    NameSurname = $"{user.FirstName} {user.LastName}",
+                    UserName = user.UserName,
+                    Roles = roles.ToList()
+                });
+            }
+
+            return View(userViewModels);
         }
+
         [HttpGet]
         public async Task<IActionResult> AssignRole(int id)
         {

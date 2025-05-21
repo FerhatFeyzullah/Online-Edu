@@ -1,0 +1,15 @@
+﻿@model List<ResultSocialMediaDto>
+
+<div class="col-xl-5 col-lg-5">
+    <div class="footer-tittle2">
+        <h4>Let’s Get Social</h4>
+    </div>
+    <!-- Footer Social -->
+    <div class="footer-social">
+        @foreach (var item in Model)
+        {
+            <a href="@item.Url" target="_blank"><i class="@item.Icon fa-2x"></i></a>
+        }
+       
+    </div>
+</div>

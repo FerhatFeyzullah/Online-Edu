@@ -796,6 +796,96 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseVideosController",
+    "Method": "Get",
+    "RelativePath": "api/CourseVideos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseVideosController",
+    "Method": "Create",
+    "RelativePath": "api/CourseVideos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createCourseVideoDto",
+        "Type": "OnlineEdu.DTO.DTOs.CourseVideoDTOs.CreateCourseVideoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseVideosController",
+    "Method": "Update",
+    "RelativePath": "api/CourseVideos",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateCourseVideoDto",
+        "Type": "OnlineEdu.DTO.DTOs.CourseVideoDTOs.UpdateCourseVideoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseVideosController",
+    "Method": "GetById",
+    "RelativePath": "api/CourseVideos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseVideosController",
+    "Method": "Delete",
+    "RelativePath": "api/CourseVideos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OnlineEdu.API.Controllers.CourseVideosController",
+    "Method": "GetVideosByCourseId",
+    "RelativePath": "api/CourseVideos/GetVideosByCourseId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "OnlineEdu.API.Controllers.MessagesController",
     "Method": "Get",
     "RelativePath": "api/Messages",

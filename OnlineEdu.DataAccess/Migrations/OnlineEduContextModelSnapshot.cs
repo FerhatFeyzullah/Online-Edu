@@ -468,6 +468,35 @@ namespace OnlineEdu.DataAccess.Migrations
                     b.ToTable("CourseRegisters");
                 });
 
+            modelBuilder.Entity("OnlineEdu.Entity.Entities.CourseVideo", b =>
+                {
+                    b.Property<int>("CourseVideoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseVideoId"));
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VideoName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VideoNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VideoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CourseVideoId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("CourseVideos");
+                });
+
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Message", b =>
                 {
                     b.Property<int>("MessageId")
@@ -708,6 +737,17 @@ namespace OnlineEdu.DataAccess.Migrations
                     b.Navigation("Course");
                 });
 
+            modelBuilder.Entity("OnlineEdu.Entity.Entities.CourseVideo", b =>
+                {
+                    b.HasOne("OnlineEdu.Entity.Entities.Course", "Course")
+                        .WithMany("CourseVideos")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+                });
+
             modelBuilder.Entity("OnlineEdu.Entity.Entities.TeacherSocial", b =>
                 {
                     b.HasOne("OnlineEdu.Entity.Entities.AppUser", "Teacher")
@@ -738,6 +778,8 @@ namespace OnlineEdu.DataAccess.Migrations
             modelBuilder.Entity("OnlineEdu.Entity.Entities.Course", b =>
                 {
                     b.Navigation("CourseRegisters");
+
+                    b.Navigation("CourseVideos");
                 });
 
             modelBuilder.Entity("OnlineEdu.Entity.Entities.CourseCategory", b =>

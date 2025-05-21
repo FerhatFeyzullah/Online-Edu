@@ -21,6 +21,7 @@
 			<th>Gösterilme Durumu</th>
 
 			<th></th>
+			<th></th>
 
 
 		</tr>
@@ -42,6 +43,10 @@
 					   class="btn btn-outline-info">Düzenle</a>
 
 					<button onclick="deleteTeacherCourseFunc(@item.CourseId)" class="btn btn-outline-danger">Sil</button>
+				</td>
+				<td>
+					<a asp-area="Teacher" asp-controller="MyCourse" asp-action="GetCourseVideo" asp-route-id="@item.CourseId"
+					   class="btn btn-outline-secondary">Kurs Videoları</a>
 				</td>
 
 			</tr>

@@ -1,13 +1,11 @@
 ﻿@model List<ResultCourseRegisterDto>
 
 @{
-    ViewData["Title"] = "Kayıtlı Olduğum Kurslar";
-    Layout = "~/Views/Shared/_StudentLayout.cshtml";
-}
-
-@{
+	ViewData["Title"] = "Kayıtlı Olduğum Kurslar";
+	Layout = "~/Views/Shared/_StudentLayout.cshtml";
 	int count = 0;
 }
+
 
 <table class="table table-hover">
 	<thead>
@@ -16,7 +14,7 @@
 			<th>Kurs Adı</th>
 			<th>Resmi</th>
 			<th>Kurs Kategorisi</th>
-			<th>Ücret</th>
+			<th>Eğitmen</th>
 
 			<th></th>
 
@@ -32,10 +30,14 @@
 				<td>@item.Course.CourseName</td>
 				<td><img src="@item.Course.ImageUrl" style="width:75px;height:75px;" /> </td>
 				<td>@item.Course.CourseCategory.CategoryName</td>
-				<td>@item.Course.Price ₺</td>
+				<td>@item.AppUser.FirstName @item.AppUser.LastName</td>
 				<td>
 
-					<button onclick="deleteRegisterCourseFunc(@item.CourseRegisterId)" class="btn btn-outline-danger">Kaydımı Sil</button>
+					@* <button onclick="deleteRegisterCourseFunc(@item.CourseViId)" class="btn btn-outline-danger">Kaydımı Sil</button> *@
+
+					<a asp-area="Student" asp-controller="CourseRegister" asp-action="GetCourseVideo" asp-route-id="@item.CourseId" class="btn btn-outline-primary">Kurs Videoları</a>
+
+
 				</td>
 
 			</tr>
@@ -45,7 +47,7 @@
 
 <a asp-area="Student" asp-controller="CourseRegister" asp-action="RegisterCourse" class="btn btn-outline-primary">Yeni Kursa Kaydol</a>
 
-<script>
+@* <script>
 	function deleteRegisterCourseFunc(id)
 	{
 		Swal.fire({
@@ -67,3 +69,4 @@
 
 </script>
 
+ *@

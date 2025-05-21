@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+
+       
+        <div class="slider-area ">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 text-center">
+                                <h2>Contact Us</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="d-none d-sm-block mb-5 pb-4">
+            <iframe src="@ViewBag.map" width="1200" height="900" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Bizimle İletişime Geçin</h2>
+                    </div>
+            @await Component.InvokeAsync("_UILayoutContactSendMessageComponent")
+            @await Component.InvokeAsync("_ContactInfo")
+
+                   
+                </div>
+            </div>
+        </section>
+        <!-- ================ contact section end ================= -->
+
+

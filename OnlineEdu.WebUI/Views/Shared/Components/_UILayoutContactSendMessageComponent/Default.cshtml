@@ -1,0 +1,33 @@
+﻿@model CreateMessageDto
+
+<div class="col-lg-8">
+    <form class="form-contact contact_form" id="subscribeForm" method="post" action="/Contact/SendMessage">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <textarea class="form-control w-100" asp-for="Content" cols="30" rows="9" placeholder=" Mesajınızı Yazın" id="message"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input class="form-control valid" asp-for="Name" type="text" placeholder="Adınızı Girin" id="name">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input class="form-control valid" asp-for="Email" type="email" placeholder="Emailinizi Yazın" id="email">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <input class="form-control" asp-for="Subject" type="text" placeholder="Konuyu Yazın" id="subject">
+                </div>
+            </div>
+        </div>
+        <div class="form-group mt-3">
+            <button type="submit" class="button button-contactForm boxed-btn">Gönder</button>
+        </div>
+    </form>
+</div>
+
+<script src="~/js/JSMessage.js"></script>

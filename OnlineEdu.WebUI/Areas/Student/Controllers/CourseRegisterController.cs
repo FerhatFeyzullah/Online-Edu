@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.Entity.Entities;
 using OnlineEdu.WebUI.DTOs.CourseDTOs;
 using OnlineEdu.WebUI.DTOs.CourseRegisterDTOs;
+using OnlineEdu.WebUI.DTOs.CourseVideoDTOs;
 using OnlineEdu.WebUI.Helper;
 
 namespace OnlineEdu.WebUI.Areas.Student.Controllers
@@ -27,7 +28,7 @@ namespace OnlineEdu.WebUI.Areas.Student.Controllers
 
         public async Task<IActionResult> RegisterCourse()
         {
-            var values = await _client.GetFromJsonAsync<List<ResultCourseDto>>("courses");
+            var values = await _client.GetFromJsonAsync<List<ResultCourseDto>>("courses/GetCoursesWithCategoryAndWithTeacher");
             var maapedValues = _mapper.Map<List<ResultCourseDto>>(values);
             ViewBag.Courses = maapedValues;
             return View();
@@ -36,13 +37,22 @@ namespace OnlineEdu.WebUI.Areas.Student.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> RegisterCourse(CreateCourseRegisterDto model,int id)
+        public async Task<IActionResult> RegisterCourse(CreateCourseRegisterDto model)
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             model.AppUserId = user.Id;
-           // model.CourseId = id;
+
             await _client.PostAsJsonAsync("courseRegisters", model);
+
             return RedirectToAction("Index");
+        }
+
+
+        public async Task<IActionResult> GetCourseVideo(int id)
+        { 
+            var values = await _client.GetFromJsonAsync<List<ResultCourseVideoDto>>("courseVideos/GetVideosByCourseId/" + id);     
+            ViewBag.CourseName = values.Select(x => x.Course.CourseName).FirstOrDefault();
+            return View(values);
         }
 
     }

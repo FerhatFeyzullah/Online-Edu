@@ -1,0 +1,79 @@
+﻿@model List<ResultSubscriberDto>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+	int count = 0;
+}
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Email</th>
+			<th>Durum</th>
+			<th></th>
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			count++;
+			<tr>
+				<td>@count</td>
+				<td>@item.Email</td>
+				@if (item.IsActive)
+				{
+					<td><span class="badge bg-success">Aktif</span></td>
+				}
+				else
+				{
+					<td><span class ="badge bg-secondary text-white">Onay Bekliyor</span></td>
+				}
+
+				<td>
+					<button onclick="deleteSubscriberFunc(@item.SubscriberId)" class="btn btn-outline-danger">Sil</button>
+
+					@if (item.IsActive)
+					{
+						<a asp-area="Admin" asp-controller="Subscriber" asp-action="ChangeStatusSubscriber" asp-route-id="@item.SubscriberId" class="btn btn-outline-warning">Pasif Yap</a>
+					}
+					else
+					{
+						<a asp-area="Admin" asp-controller="Subscriber" asp-action="ChangeStatusSubscriber" asp-route-id="@item.SubscriberId" class="btn btn-outline-success">Aktif Yap</a>
+					}
+				</td>
+				
+
+			</tr>
+		}
+	</tbody>
+</table>
+
+
+<script>
+	function deleteSubscriberFunc(id)
+	{
+		Swal.fire({
+	  title: "Silmek istediğine emin misin?",
+	  text: "Bu işlemi geri alamazsın!",
+	  icon: "warning",
+	  showCancelButton: true,
+	  confirmButtonColor: "#3085d6",
+	  cancelButtonColor: "#d33",
+	  confirmButtonText: "Evet, Sil!",
+	  cancelButtonText: "İptal"
+	}).then((result) => {
+	  if (result.isConfirmed) {
+		window.location.href = "/Admin/Subscriber/DeleteSubscriber/"+id;
+	  }
+	});
+	}
+
+
+</script>
+

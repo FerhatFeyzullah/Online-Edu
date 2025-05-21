@@ -27,7 +27,7 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var values = await _client.GetFromJsonAsync<List<ResultCourseDto>>("courses");
+            var values = await _client.GetFromJsonAsync<List<ResultCourseDto>>("courses/GetCoursesWithCategoryAndWithTeacher");
             return View(values);
         }
         public async Task<IActionResult> DeleteCourse(int id)

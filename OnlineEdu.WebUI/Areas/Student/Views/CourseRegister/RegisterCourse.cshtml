@@ -1,55 +1,39 @@
 ﻿@model CreateCourseRegisterDto
-
 @{
     ViewData["Title"] = "Kayıt olunabilir Kurslar";
     Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    var courseList = ViewBag.Courses as List<ResultCourseDto>;
 }
 
-
-@{
-var courseList = ViewBag.Courses as List<ResultCourseDto>
-	; // Tipini uygun şekilde değiştir
-}
-
-
-
-
-
-<form method="post"> <!-- ya da hangi action'sa -->
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Kurs Adı</th>
-                <th>Kategori</th>
-                <th>Fiyat</th>
-                <th>İşlem</th>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                int count = 1;
-                foreach (var item in courseList)
-                {
-                    <tr>
-                        <td><input type="hidden" name="CourseId" value="@item.CourseId" /></td>
-                        <td>@count</td>
-                        <td>@item.CourseName</td>
-                        <td>@item.CourseCategory.CategoryName</td>
-                        <td>@item.Price ₺</td>
-                        <td>
-                            <button class="btn btn-primary">Kursa Kaydol</button>
-                        </td>
-                    </tr>
-                    count++;
-                }
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Kurs Adı</th>
+            <th>Kategori</th>
+            <th>Fiyat</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int count = 1;
+            foreach (var item in courseList)
+            {
+                <tr>
+                    <td>@count</td>
+                    <td>@item.CourseName</td>
+                    <td>@item.CourseCategory.CategoryName</td>
+                    <td>@item.Price ₺</td>
+                    <td>
+                        <form asp-area="Student" asp-controller="CourseRegister" asp-action="RegisterCourse" method="post">
+                            <input type="hidden" name="CourseId" value="@item.CourseId" />
+                            <button type="submit" class="btn btn-outline-secondary">Kursa Kaydol</button>
+                        </form>
+                    </td>
+                </tr>
+                count++;
             }
-        </tbody>
-    </table>
-
-</form>
-
-
-
-
+        }
+    </tbody>
+</table>

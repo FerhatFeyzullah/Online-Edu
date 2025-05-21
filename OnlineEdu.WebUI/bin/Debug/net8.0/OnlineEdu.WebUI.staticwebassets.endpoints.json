@@ -167,8 +167,8 @@
       ]
     },
     {
-      "Route": "js/JavaScript.7t11uv0ov1.js",
-      "AssetFile": "js/JavaScript.js",
+      "Route": "js/JSMessage.1z1b321lrf.js",
+      "AssetFile": "js/JSMessage.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -181,7 +181,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "919"
+          "Value": "1463"
         },
         {
           "Name": "Content-Type",
@@ -189,25 +189,62 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"lYaLsGOi79OzGQu0ctRwkAQiEHcHbQnT8UI8ZYwzWrc=\""
+          "Value": "\"vVnbh6ixvjJBNkq1kx8v0LRjhmkcOZlDdUrEwf18KT4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 10:14:37 GMT"
+          "Value": "Wed, 21 May 2025 05:23:22 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "7t11uv0ov1"
+          "Value": "1z1b321lrf"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-lYaLsGOi79OzGQu0ctRwkAQiEHcHbQnT8UI8ZYwzWrc="
+          "Value": "sha256-vVnbh6ixvjJBNkq1kx8v0LRjhmkcOZlDdUrEwf18KT4="
         },
         {
           "Name": "label",
-          "Value": "js/JavaScript.js"
+          "Value": "js/JSMessage.js"
+        }
+      ]
+    },
+    {
+      "Route": "js/JSMessage.js",
+      "AssetFile": "js/JSMessage.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1463"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vVnbh6ixvjJBNkq1kx8v0LRjhmkcOZlDdUrEwf18KT4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 21 May 2025 05:23:22 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vVnbh6ixvjJBNkq1kx8v0LRjhmkcOZlDdUrEwf18KT4="
         }
       ]
     },
@@ -226,7 +263,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "919"
+          "Value": "931"
         },
         {
           "Name": "Content-Type",
@@ -234,17 +271,62 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"lYaLsGOi79OzGQu0ctRwkAQiEHcHbQnT8UI8ZYwzWrc=\""
+          "Value": "\"x7IUIpdA+NV/OySA7HxBgNKQU8OQnMNvqpLdMlgwCXo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 20 May 2025 10:14:37 GMT"
+          "Value": "Tue, 20 May 2025 18:51:08 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-lYaLsGOi79OzGQu0ctRwkAQiEHcHbQnT8UI8ZYwzWrc="
+          "Value": "sha256-x7IUIpdA+NV/OySA7HxBgNKQU8OQnMNvqpLdMlgwCXo="
+        }
+      ]
+    },
+    {
+      "Route": "js/JavaScript.vaornikrui.js",
+      "AssetFile": "js/JavaScript.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "931"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x7IUIpdA+NV/OySA7HxBgNKQU8OQnMNvqpLdMlgwCXo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 18:51:08 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vaornikrui"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-x7IUIpdA+NV/OySA7HxBgNKQU8OQnMNvqpLdMlgwCXo="
+        },
+        {
+          "Name": "label",
+          "Value": "js/JavaScript.js"
         }
       ]
     },

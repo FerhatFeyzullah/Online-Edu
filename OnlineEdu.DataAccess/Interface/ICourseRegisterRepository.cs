@@ -10,6 +10,6 @@ namespace OnlineEdu.DataAccess.Interface
 {
     public interface ICourseRegisterRepository:IRepository<CourseRegister>
     {
-        List<CourseRegister> GetAllWithCourseAndCategory(Expression<Func<CourseRegister,bool>> Filter);
+        List<CourseRegister> GetAllWithCourseAndCategory(int id);
     }
 }

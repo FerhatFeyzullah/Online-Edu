@@ -82,7 +82,7 @@
                                         <li><a href="/Course/Index">Kurslar</a></li>
                                         <li><a href="/Teacher/Index">Eğitmenler</a></li>
                                         <li><a href="/Blog/Index">Blog</a></li>
-                                        <li><a href="contact.html">İletişim</a></li>
+                                        <li><a href="/Contact/Index">İletişim</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -116,31 +116,8 @@
                 <div class="footer-top footer-padding">
                     <!-- footer Heading -->
                     <div class="footer-heading">
-                        <div class="row justify-content-between">
-                            <div class="col-xl-6 col-lg-7 col-md-10">
-                                <div class="footer-tittle2">
-                                    <h4>Stay Updated</h4>
-                                </div>
-                                <!-- Form -->
-                                <div class="footer-form mb-50">
-                                    <div id="mc_embed_signup">
-                                        @await Component.InvokeAsync("_BlogSubscribe")
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-5 col-lg-5">
-                                <div class="footer-tittle2">
-                                    <h4>Let’s Get Social</h4>
-                                </div>
-                                <!-- Footer Social -->
-                                <div class="footer-social">
-                                    <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-google"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
-                                </div>
-                            </div>
+                        <div class="row justify-content-left">                            
+                            @await Component.InvokeAsync("_FooterSocialMediaComponent")
                         </div>
                     </div>
                     <!-- Footer Menu -->
@@ -251,6 +228,7 @@
     <script src="~/onlineedu-master/assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/js/JavaScript.js"></script>
+	<script src="~/js/JSMessage.js"></script>
 
 
 </body>

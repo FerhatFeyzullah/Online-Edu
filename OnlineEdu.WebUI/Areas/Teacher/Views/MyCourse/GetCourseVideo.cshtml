@@ -1,0 +1,39 @@
+﻿@model List<ResultCourseVideoDto>
+
+@{
+    ViewData["Title"] = "Kurs Videoları";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+
+<h2>@ViewBag.CName Kursu</h2>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Video</th>
+			<th></th>
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+
+			<tr>
+				<th>@item.VideoNumber</th>
+				<td>
+					<sapn>@item.VideoName</sapn>
+					<iframe width="560" height="315" src="@item.VideoUrl"
+							title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+					</iframe>
+				</td>
+
+			</tr>
+		}
+	</tbody>
+</table>
+
+<a asp-area="Teacher" asp-controller="MyCourse" asp-action="Index" class="btn btn-outline-secondary">Kurslara Geri Dön</a>
+<a asp-area="Teacher" asp-controller="MyCourse" asp-action="CreateVideo" asp-route-id="" class="btn btn-outline-primary">Kursa Yeni Video Ekle</a>

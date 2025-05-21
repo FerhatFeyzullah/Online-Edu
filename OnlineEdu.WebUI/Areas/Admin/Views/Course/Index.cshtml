@@ -18,6 +18,7 @@
 			<th>Resmi</th>
 			<th>Kurs Kategorisi</th>
 			<th>Ücret</th>
+			<th>Eğitmen</th>
 			<th>Gösterilme Durumu</th>
 
 			<th></th>
@@ -35,6 +36,7 @@
 				<td><img src="@item.ImageUrl" style="width:75px;height:75px;"/> </td>
 				<td>@item.CourseCategory.CategoryName</td>
 				<td>@item.Price ₺</td>
+				<td>@item.AppUser.FirstName @item.AppUser.LastName</td>
 				<td>@(item.IsShown ? "Gösteriliyor" : "Gösterilmiyor")</td>
 
 				<td>

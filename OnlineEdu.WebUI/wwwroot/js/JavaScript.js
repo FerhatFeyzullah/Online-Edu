@@ -1,5 +1,5 @@
 ﻿
-function kontrolEt()
+function kontrolEtSubscriber()
 {
     document.getElementById("subscribeForm").addEventListener("submit", function (event) {
         event.preventDefault(); // sayfa yenilenmesin

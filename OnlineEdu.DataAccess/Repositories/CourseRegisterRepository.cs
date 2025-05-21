@@ -17,9 +17,23 @@ namespace OnlineEdu.DataAccess.Repositories
         {
         }
 
-        public List<CourseRegister> GetAllWithCourseAndCategory(Expression<Func<CourseRegister, bool>> Filter)
+        public List<CourseRegister> GetAllWithCourseAndCategory(int id)
         {
-            return _context.CourseRegisters.Where(Filter).Include(x => x.Course).ThenInclude(x => x.CourseCategory).ToList();
+            //return _context.CourseRegisters.Where(x=>x.AppUserId==id).Include(x => x.Course).ThenInclude(x => x.CourseCategory).ToList();
+
+            var values = _context.CourseRegisters
+    .Include(x => x.AppUser)
+    .Include(x => x.Course).ThenInclude(x => x.CourseCategory)
+    .Include(x => x.Course).ThenInclude(x => x.AppUser)
+    .Where(x => x.AppUserId == id)
+    .ToList();
+            return values;
+
+            //var values = _context.CourseRegisters.Where(x => x.AppUserId == id).Include(x => x.Course).ThenInclude(x => x.CourseCategory).Include(x => x.AppUser).ToList();
+
+
+            //return values;
+
 
         }
     }

@@ -11,7 +11,6 @@ namespace OnlineEdu.WebUI.ViewComponents.Blog
         public IViewComponentResult Invoke()
         {
 
-            //var model = new CreateSubscriberDto();
             return View();
         }
 

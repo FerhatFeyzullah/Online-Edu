@@ -40,8 +40,7 @@
 				<td>@(item.IsShown ? "Gösteriliyor" : "Gösterilmiyor")</td>
 
 				<td>
-					<button onclick="deleteCourseFunc(@item.CourseId)" class="btn btn-outline-danger">Sil</button>
-					<a asp-area="Admin" asp-controller="Course" asp-action="UpdateCourse" asp-route-id="@item.CourseId" class="btn btn-outline-info">Düzenle</a>					
+					<button onclick="deleteCourseFunc(@item.CourseId)" class="btn btn-outline-danger">Kursu Sil</button>
 				</td>
 
 				<td>
@@ -54,7 +53,6 @@
 	</tbody>
 </table>
 
-<a asp-area="Admin" asp-controller="Course" asp-action="CreateCourse" class="btn btn-outline-primary">Yeni Kurs Ekle</a>
 
 <script>
 	function deleteCourseFunc(id)

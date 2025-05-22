@@ -1,4 +1,4 @@
-﻿@model List<ResultBlogDto>
+﻿@model List<BlogWithCategoryAndWriterDto>
 
 <div class="col-lg-8 mb-5 mb-lg-0">
     <div class="blog_left_sidebar">
@@ -20,8 +20,8 @@
                         @item.Content.Substring(0,50) ...
                 </p>
                 <ul class="blog-info-link">
-                        <li><a href="#"><i class="fa fa-user"></i> @item.Writer.FirstName @item.Writer.LastName</a></li>
-                        <li><a href="#"><i class="fa fa-list-ol"></i> @item.BlogCategory.CategoryName</a></li>
+                        <li><i class="fa fa-user"></i> @item.Writer.FirstName @item.Writer.LastName</li>
+                        <li><a href="/Blog/GetBlogsByCategoryId/@item.BlogCategoryId"><i class="fa fa-list-ol"></i> @item.BlogCategory.CategoryName</a></li>
                 </ul>
             </div>
         </article>

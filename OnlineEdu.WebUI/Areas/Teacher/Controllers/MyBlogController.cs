@@ -6,14 +6,22 @@ using OnlineEdu.Entity.Entities;
 using OnlineEdu.WebUI.DTOs.BlogCategoryDTOs;
 using OnlineEdu.WebUI.DTOs.BlogDTOs;
 using OnlineEdu.WebUI.Helper;
+using OnlineEdu.WebUI.Services.TokenService;
 
 namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
 {
     [Authorize(Roles ="Teacher")]
     [Area("Teacher")]
-    public class MyBlogController(UserManager<AppUser> _userManager) : Controller
+    public class MyBlogController : Controller
     {
-        private readonly HttpClient _client = HttpClientHelper.CreateClient();
+        private readonly HttpClient _client;
+        private readonly ITokenService _tokenService;
+
+        public MyBlogController(IHttpClientFactory clientFactory, ITokenService tokenService)
+        {
+            _client = clientFactory.CreateClient("EduClient");
+            _tokenService = tokenService;
+        }
 
         public async Task CategoryDropDown()
         {
@@ -29,9 +37,9 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var userId = _tokenService.GetUserId;
 
-            var values = await _client.GetFromJsonAsync<List<ResultBlogDto>>($"blogs/GetBlogsWithCategoryByWriter/{user.Id}");
+            var values = await _client.GetFromJsonAsync<List<ResultBlogDto>>($"blogs/GetBlogsWithCategoryByWriter/{userId}");
             return View(values);
         }
 
@@ -51,8 +59,8 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateBlog(CreateBlogDto createBlogDto)
         {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            createBlogDto.WriterId = user.Id;
+            var userId = _tokenService.GetUserId;
+            createBlogDto.WriterId = userId;
             
             await _client.PostAsJsonAsync("blogs", createBlogDto);
             return RedirectToAction("Index");

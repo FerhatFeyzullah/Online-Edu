@@ -1,11 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.WebUI.Helper;
+using OnlineEdu.WebUI.Services.TokenService;
 
 namespace OnlineEdu.WebUI.ViewComponents
 {
     public class _HomeCounterComponent:ViewComponent
     {
-        private readonly HttpClient _client = HttpClientHelper.CreateClient();    
+        private readonly HttpClient _client;
+
+        public _HomeCounterComponent(IHttpClientFactory clientFactory)
+        {
+            _client = clientFactory.CreateClient("EduClient");
+
+        }
         public async Task<IViewComponentResult> InvokeAsync()
         {
             ViewBag.BlogCount = await _client.GetFromJsonAsync<int>("blogs/GetBlogCount");

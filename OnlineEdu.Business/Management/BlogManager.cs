@@ -27,9 +27,10 @@ namespace OnlineEdu.Business.Management
             return _mapper.Map<List<ResultBlogDto>>(blogs);
         }
 
-        public List<Blog> AGetBlogsWithCategory()
+        public List<BlogWithCategoryAndWriterDto> AGetBlogsWithCategory()
         {
-            return _blogRepository.GetBlogsWithCategory();
+            var blogs = _blogRepository.GetBlogsWithCategory();
+            return _mapper.Map<List<BlogWithCategoryAndWriterDto>>(blogs);
         }
 
         public BlogWithCategoryAndWriterDto AGetBlogsWithCategory(int id)

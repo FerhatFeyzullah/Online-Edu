@@ -11,7 +11,12 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
     [Area("Admin")]
     public class CourseController : Controller
     {
-        private readonly HttpClient _client = HttpClientHelper.CreateClient();
+        private readonly HttpClient _client;
+
+        public CourseController(IHttpClientFactory clientFactory)
+        {
+            _client = clientFactory.CreateClient("EduClient");
+        }
 
         public async Task CourseCategoryDropDown ()
         {
@@ -33,31 +38,6 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> DeleteCourse(int id)
         {
             await _client.DeleteAsync($"courses/{id}");
-            return RedirectToAction(nameof(Index));
-        }
-
-        public async Task<IActionResult> CreateCourse()
-        {
-            await CourseCategoryDropDown();
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> CreateCourse(CreateCourseDto createCourseDto)
-        {
-            await _client.PostAsJsonAsync("courses", createCourseDto);
-            return RedirectToAction(nameof(Index));
-        }
-        public async Task<IActionResult> UpdateCourse(int id)
-        {
-            await CourseCategoryDropDown();
-            var value = await _client.GetFromJsonAsync<UpdateCourseDto>($"courses/{id}");
-            return View(value);
-        }
-        [HttpPost]
-        public async Task<IActionResult> UpdateCourse(UpdateCourseDto updateCourseDto)
-        {
-            await _client.PutAsJsonAsync("courses", updateCourseDto);
             return RedirectToAction(nameof(Index));
         }
 

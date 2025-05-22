@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.Business.Interface;
@@ -7,17 +8,20 @@ using OnlineEdu.Entity.Entities;
 
 namespace OnlineEdu.API.Controllers
 {
+    [Authorize(Roles = "Admin,Teacher,Student")]
     [Route("api/[controller]")]
     [ApiController]
     public class CoursesController(ICourseService _courseService, IMapper _mapper) : ControllerBase
     {
+        [AllowAnonymous]
         [HttpGet("GetCoursesWithEverythingById/{id}")]
         public IActionResult GetCoursesWithEverythingById(int id)
         {
-            var values = _courseService.AGetCoursesWithCategory(x=>x.CourseCategoryId==id);
+            var values = _courseService.AGetCoursesWithCategory(x => x.CourseCategoryId == id);
             var categories = _mapper.Map<List<ResultCourseDto>>(values);
             return Ok(categories);
         }
+        [AllowAnonymous]
         [HttpGet("GetCoursesWithCategoryAndWithTeacher")]
         public IActionResult GetCoursesWithCategoryAndWithTeacher()
         {
@@ -31,11 +35,11 @@ namespace OnlineEdu.API.Controllers
             var value = _courseService.AGetById(id);
             return Ok(value);
         }
-
+        [AllowAnonymous]
         [HttpGet("GetActiveCourse")]
         public IActionResult GetActiveCourse()
         {
-            var values = _courseService.AGetFilteredList(x=>x.IsShown==true);
+            var values = _courseService.AGetFilteredList(x => x.IsShown == true);
             return Ok(values);
         }
 
@@ -72,6 +76,7 @@ namespace OnlineEdu.API.Controllers
             _courseService.ADontShowOnHome(id);
             return Ok("Ana Sayfada Gösterilmiyor.");
         }
+        [AllowAnonymous]
         [HttpGet("GetCourseWithTeacherId/{id}")]
         public IActionResult GetCourseWithTeacherId(int id)
         {
@@ -79,6 +84,7 @@ namespace OnlineEdu.API.Controllers
             var mappedavlues = _mapper.Map<List<ResultCourseDto>>(values);
             return Ok(mappedavlues);
         }
+        [AllowAnonymous]
         [HttpGet("GetCourseCount")]
         public IActionResult GetCourseCount()
         {

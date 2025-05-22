@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using OnlineEdu.WebUI.DTOs.ContactDTOs;
 using OnlineEdu.WebUI.Helper;
+using OnlineEdu.WebUI.Services.TokenService;
 
 namespace OnlineEdu.WebUI.Areas.Admin.Controllers
 {
@@ -10,7 +11,12 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
     [Area("Admin")]
     public class ContactController : Controller
     {
-        private readonly HttpClient _client = HttpClientHelper.CreateClient();
+        private readonly HttpClient _client;
+
+        public ContactController(IHttpClientFactory clientFactory)
+        {
+            _client = clientFactory.CreateClient("EduClient");
+        }
 
         public async Task<IActionResult> Index()
         {

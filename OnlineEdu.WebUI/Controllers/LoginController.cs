@@ -1,46 +1,65 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
+using OnlineEdu.WebUI.DTOs.LoginDTOs;
 using OnlineEdu.WebUI.DTOs.UserDTOs;
+using OnlineEdu.WebUI.Helper;
 using OnlineEdu.WebUI.Services.UserService;
 
 namespace OnlineEdu.WebUI.Controllers
 {
-    public class LoginController(IUserService _userService) : Controller
+    public class LoginController : Controller
     {
+        private readonly HttpClient _client;
+
+        public LoginController(IHttpClientFactory clientFactory)
+        {
+            _client = clientFactory.CreateClient("EduClient");
+        }
         public IActionResult SignIn()
         {
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> SignIn(UserLoginDto userLoginDto)
-        { 
-             var userRole = await _userService.LoginAsync(userLoginDto);
-
-            if (userRole == "Admin")
+        {
+            var result = await _client.PostAsJsonAsync("users/login", userLoginDto);
+            if (!result.IsSuccessStatusCode)
             {
-                return RedirectToAction("Index", "Banner", new { area = "Admin" });
-            }
-            else if (userRole == "Teacher")
-            {
-                return RedirectToAction("Index", "MyCourse", new { area = "Teacher" });
-            }
-            else if (userRole == "Student")
-            {
-                return RedirectToAction("Index", "CourseRegister", new { area = "Student" });
+                ModelState.AddModelError("", "Email veya Şifre Hatalı");
+                return View(userLoginDto);
             }
 
-            else
+            var handler = new JwtSecurityTokenHandler();
+            var response = await result.Content.ReadFromJsonAsync<LoginResponseDto>();
+            var token = handler.ReadJwtToken(response.Token);
+            var claims = token.Claims.ToList();
+
+            if (response.Token != null)
             {
-                ModelState.AddModelError("", "Hatalı Email veya Şifre.");
-                return View();
+                claims.Add(new Claim("Token", response.Token));
+                var claimsIdentity = new ClaimsIdentity(claims, JwtBearerDefaults.AuthenticationScheme);
+                var authProps = new AuthenticationProperties
+                {
+                    IsPersistent = true,
+                    ExpiresUtc = response.ExpireDate
+                };
+
+                await HttpContext.SignInAsync(JwtBearerDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProps);
+                return RedirectToAction("Index", "Home");
             }
-            return View();
+            
+            ModelState.AddModelError("", "Email veya Şifre Hatalı");
+            return View(userLoginDto);
 
         }
 
         public async Task<IActionResult> Logout()
         {
-            await _userService.LogoutAsync();
+            HttpContext.SignOutAsync(); 
             return RedirectToAction("Index", "Home");
-        } 
+        }
     }
 }

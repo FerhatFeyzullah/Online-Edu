@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.Business.Interface;
@@ -7,25 +8,26 @@ using OnlineEdu.Entity.Entities;
 
 namespace OnlineEdu.API.Controllers
 {
+    [Authorize(Roles = "Admin,Taecher")]
     [Route("api/[controller]")]
     [ApiController]
     public class BlogsController(IMapper _mapper,IBlogService _blogService) : ControllerBase
     {
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Get()
         {
-            var values = _blogService.AGetBlogsWithCategory();
-            var blogs = _mapper.Map<List<ResultBlogDto>>(values);
-            return Ok(blogs);
+            var values = _blogService.AGetBlogsWithCategory();           
+            return Ok(values);
         }
-
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             var blog = _blogService.AGetBlogsWithCategory(id);
             return Ok(blog);
         }
-
+        [AllowAnonymous]
         [HttpGet("GetLast4Blogs")]
         public IActionResult GetLast4Blogs()
         {
@@ -33,7 +35,7 @@ namespace OnlineEdu.API.Controllers
             var mappedvalues = _mapper.Map<List<ResultBlogDto>>(values);
             return Ok(mappedvalues);
         }
-
+        [AllowAnonymous]
         [HttpGet("GetBlogsWithCategoryByWriter/{id}")]
         public IActionResult GetBlogsWithCategoryByWriter(int id)
         {
@@ -64,13 +66,14 @@ namespace OnlineEdu.API.Controllers
             _blogService.AUpdate(value);
             return Ok("Blog Guncelleme Basarili.");
         }
+        [AllowAnonymous]
         [HttpGet("GetBlogCount")]
         public IActionResult GetBlogCount()
         {
             var value = _blogService.ACount();
             return Ok(value);
         }
-
+        [AllowAnonymous]
         [HttpGet("GetBlogsByCategoryId/{id}")]
         public IActionResult GetBlogsByCategoryId(int id)
         {

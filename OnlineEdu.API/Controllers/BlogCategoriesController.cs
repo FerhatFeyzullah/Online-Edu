@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.Business.Interface;
@@ -7,10 +8,12 @@ using OnlineEdu.Entity.Entities;
 
 namespace OnlineEdu.API.Controllers
 {
+    [Authorize(Roles = "Admin,Teacher")]
     [Route("api/[controller]")]
     [ApiController]
     public class BlogCategoriesController(IBlogCategoryService _blogCategoryService, IMapper _mapper) : ControllerBase
     {
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Get()
         {
@@ -18,7 +21,7 @@ namespace OnlineEdu.API.Controllers
             var mappedvalues = _mapper.Map<List<ResultBlogCategoryDto>>(values);
             return Ok(mappedvalues);
         }
-
+        [AllowAnonymous]
         [HttpGet("GetCategoriesWithBlogs")]
         public IActionResult GetCategoriesWithBlogs()
         {

@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using OnlineEdu.Business.Configurations;
 using OnlineEdu.Business.Interface;
 using OnlineEdu.Business.Management;
 using OnlineEdu.DataAccess.Interface;
@@ -8,7 +9,7 @@ namespace OnlineEdu.API.Extensions
 {
     public static class ServiceExtesions
     {
-        public static void AddServiceExtensions(this IServiceCollection services)
+        public static void AddServiceExtensions(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IGenericService<>), typeof(GenericManager<>));
@@ -30,6 +31,10 @@ namespace OnlineEdu.API.Extensions
 
             services.AddScoped<ICourseVideoRepository, CourseVideoRepository>();
             services.AddScoped<ICourseVideoService, CourseVideoManager>();
+
+            services.AddScoped<IJwtService, JwtManager>();
+
+            services.Configure<JwtTokenOptions>(configuration.GetSection("TokenOptions"));
 
 
         }

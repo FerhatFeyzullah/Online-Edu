@@ -100,16 +100,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ291cnNlQ2F0ZWdvcnlcVXBkYXRlQ291cnNlQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Areas/Admin/Views/Course/CreateCourse.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ291cnNlXENyZWF0ZUNvdXJzZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Areas/Admin/Views/Course/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ291cnNlXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Areas/Admin/Views/Course/UpdateCourse.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ291cnNlXFVwZGF0ZUNvdXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dell/Desktop/DOTNET Projects/OnlineEdu/OnlineEdu.WebUI/Areas/Admin/Views/Message/Index.cshtml]

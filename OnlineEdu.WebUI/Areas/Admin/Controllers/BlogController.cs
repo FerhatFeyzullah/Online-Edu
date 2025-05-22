@@ -1,17 +1,27 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using OnlineEdu.Entity.Entities;
 using OnlineEdu.WebUI.DTOs.BlogCategoryDTOs;
 using OnlineEdu.WebUI.DTOs.BlogDTOs;
 using OnlineEdu.WebUI.Helper;
+using OnlineEdu.WebUI.Services.TokenService;
 
 namespace OnlineEdu.WebUI.Areas.Admin.Controllers
 {
     [Authorize(Roles = "Admin")]
     [Area("Admin")]
-    public class BlogController : Controller
+    public class BlogController: Controller
     {
-        private readonly HttpClient _client = HttpClientHelper.CreateClient();
+        private readonly ITokenService _tokenService;
+        private readonly HttpClient _client;
+
+        public BlogController(IHttpClientFactory clientFactory, ITokenService tokenService)
+        {
+            _client = clientFactory.CreateClient("EduClient");
+            _tokenService = tokenService;
+        }
 
         public async Task CategoryDropdown()
         {
@@ -46,6 +56,8 @@ namespace OnlineEdu.WebUI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateBlog(CreateBlogDto createBlogDto)
         {
+            var userId = _tokenService.GetUserId;
+            createBlogDto.WriterId = userId;
             await _client.PostAsJsonAsync("blogs", createBlogDto);
             return RedirectToAction(nameof(Index));
         }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.Business.Interface;
@@ -7,6 +8,7 @@ using OnlineEdu.Entity.Entities;
 
 namespace OnlineEdu.API.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class SubscribersController(IGenericService<Subscriber> _subscriberService,IMapper _mapper) : ControllerBase
@@ -31,6 +33,7 @@ namespace OnlineEdu.API.Controllers
             _subscriberService.ADelete(id);
             return Ok("Abone silme Basarili");
         }
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult Create(CreateSubscriberDto createAboutDto)
         {

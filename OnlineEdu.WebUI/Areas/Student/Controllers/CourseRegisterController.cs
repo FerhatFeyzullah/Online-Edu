@@ -7,22 +7,30 @@ using OnlineEdu.WebUI.DTOs.CourseDTOs;
 using OnlineEdu.WebUI.DTOs.CourseRegisterDTOs;
 using OnlineEdu.WebUI.DTOs.CourseVideoDTOs;
 using OnlineEdu.WebUI.Helper;
+using OnlineEdu.WebUI.Services.TokenService;
 
 namespace OnlineEdu.WebUI.Areas.Student.Controllers
 {
     [Authorize(Roles = "Student")]
     [Area("Student")]
-    public class CourseRegisterController(UserManager<AppUser> _userManager, IMapper _mapper) : Controller
+    public class CourseRegisterController : Controller
     {
-        private readonly HttpClient _client = HttpClientHelper.CreateClient();
+        private readonly HttpClient _client;
+        private readonly ITokenService _tokenService;
+        private readonly IMapper _mapper;
 
+        public CourseRegisterController(IHttpClientFactory clientFactory, IMapper mapper, ITokenService tokenService)
+        {
+            _client = clientFactory.CreateClient("EduClient");
+            _mapper = mapper;
+            _tokenService = tokenService;
+        }
 
-
-
+ 
         public async Task<IActionResult> Index()
         {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            var values = await _client.GetFromJsonAsync<List<ResultCourseRegisterDto>>("courseRegisters/GetMyCourses/" + user.Id);
+            var userId = _tokenService.GetUserId;
+            var values = await _client.GetFromJsonAsync<List<ResultCourseRegisterDto>>("courseRegisters/GetMyCourses/" + userId);
             return View(values);
         }
 
@@ -33,14 +41,12 @@ namespace OnlineEdu.WebUI.Areas.Student.Controllers
             ViewBag.Courses = maapedValues;
             return View();
 
-
-
         }
         [HttpPost]
         public async Task<IActionResult> RegisterCourse(CreateCourseRegisterDto model)
         {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            model.AppUserId = user.Id;
+            var userId = _tokenService.GetUserId;
+            model.AppUserId = userId;
 
             await _client.PostAsJsonAsync("courseRegisters", model);
 

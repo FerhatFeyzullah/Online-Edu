@@ -10,7 +10,7 @@ namespace OnlineEdu.Business.Interface
 {
     public interface IBlogService : IGenericService<Blog>
     {
-        List<Blog> AGetBlogsWithCategory();
+        List<BlogWithCategoryAndWriterDto> AGetBlogsWithCategory();
         List<ResultBlogDto> AGetBlogsByCategoryId(int id);
         BlogWithCategoryAndWriterDto AGetBlogsWithCategory(int id);
         List<Blog> AGetLast4BlogWithCategory();

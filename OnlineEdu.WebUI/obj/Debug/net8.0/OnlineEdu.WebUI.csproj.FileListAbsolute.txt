@@ -299,3 +299,4 @@ C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.WebUI\bin\Debug\net8.0
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.WebUI\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.WebUI\bin\Debug\net8.0\OnlineEdu.DTO.dll
 C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.WebUI\bin\Debug\net8.0\OnlineEdu.DTO.pdb
+C:\Users\Dell\Desktop\DOTNET Projects\OnlineEdu\OnlineEdu.WebUI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

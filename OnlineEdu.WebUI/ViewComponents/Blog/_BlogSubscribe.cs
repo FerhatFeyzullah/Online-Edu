@@ -7,7 +7,7 @@ namespace OnlineEdu.WebUI.ViewComponents.Blog
 {
     public class _BlogSubscribe:ViewComponent
     {
-        private readonly HttpClient _client = HttpClientHelper.CreateClient();
+        
         public IViewComponentResult Invoke()
         {
 

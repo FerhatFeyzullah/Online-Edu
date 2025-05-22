@@ -1,18 +1,20 @@
 using Microsoft.EntityFrameworkCore;
-using OnlineEdu.Business.Management;
-using OnlineEdu.Business.Interface;
 using OnlineEdu.DataAccess.Context;
-using OnlineEdu.DataAccess.Interface;
-using OnlineEdu.DataAccess.Repositories;
 using System.Reflection;
 using OnlineEdu.API.Extensions;
 using OnlineEdu.Business.Mapping;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using OnlineEdu.Business.Configurations;
+using System.Text;
+using OnlineEdu.Entity.Entities;
+using OnlineEdu.Business.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddServiceExtensions();
+builder.Services.AddServiceExtensions(builder.Configuration);
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddAutoMapper(typeof(BusinessMapping).Assembly);
 builder.Services.AddAutoMapper(typeof(CourseVideoMapping).Assembly);
@@ -22,6 +24,31 @@ builder.Services.AddDbContext<OnlineEduContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
 
+});
+
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<OnlineEduContext>().AddErrorDescriber<CustomErrorDescriber>();
+    
+var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<JwtTokenOptions>();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidIssuer = tokenOptions.Issuer,
+        ValidAudience = tokenOptions.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenOptions.Key)),
+        ClockSkew = TimeSpan.Zero,
+        NameClaimType = "name",
+
+    };
 });
 
 builder.Services.AddControllers();
@@ -39,7 +66,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

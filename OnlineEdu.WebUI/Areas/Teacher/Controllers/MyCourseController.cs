@@ -7,6 +7,7 @@ using OnlineEdu.WebUI.DTOs.CourseCategoryDTOs;
 using OnlineEdu.WebUI.DTOs.CourseDTOs;
 using OnlineEdu.WebUI.DTOs.CourseVideoDTOs;
 using OnlineEdu.WebUI.Helper;
+using OnlineEdu.WebUI.Services.TokenService;
 
 namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
 {
@@ -14,13 +15,15 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
     [Area("Teacher")]
     public class MyCourseController : Controller
     {
-        private readonly HttpClient _client = HttpClientHelper.CreateClient();
-        private readonly UserManager<AppUser> _userManager;
+        private readonly HttpClient _client;
+        private readonly ITokenService _tokenService;
 
-        public MyCourseController(UserManager<AppUser> userManager)
+        public MyCourseController(IHttpClientFactory clientFactory, ITokenService tokenService)
         {
-            _userManager = userManager;
+            _client = clientFactory.CreateClient("EduClient");
+            _tokenService = tokenService;
         }
+
         public async Task CategoryDropDown()
         {
             var values = await _client.GetFromJsonAsync<List<ResultCourseCategoryDto>>("courseCategories");
@@ -35,9 +38,9 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         }
         public async Task<IActionResult> Index(int id)
         {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var userId = _tokenService.GetUserId;
 
-            var values = await _client.GetFromJsonAsync<List<ResultCourseDto>>($"courses/GetCourseWithTeacherId/{user.Id}");
+            var values = await _client.GetFromJsonAsync<List<ResultCourseDto>>($"courses/GetCourseWithTeacherId/{userId}");
             return View(values);
         }
 
@@ -57,9 +60,9 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCourse(CreateCourseDto createCourseDto)
         {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var userId = _tokenService.GetUserId;
 
-            createCourseDto.AppUserId = user.Id;
+            createCourseDto.AppUserId = userId;
             createCourseDto.IsShown = false;
 
             await _client.PostAsJsonAsync("courses", createCourseDto);

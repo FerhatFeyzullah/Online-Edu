@@ -1,4 +1,5 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+﻿using System.Data;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.WebUI.DTOs.LoginDTOs;
 using OnlineEdu.WebUI.DTOs.UserDTOs;
 using OnlineEdu.WebUI.Helper;
+using OnlineEdu.WebUI.Services.TokenService;
 using OnlineEdu.WebUI.Services.UserService;
 
 namespace OnlineEdu.WebUI.Controllers
@@ -13,10 +15,12 @@ namespace OnlineEdu.WebUI.Controllers
     public class LoginController : Controller
     {
         private readonly HttpClient _client;
+        private readonly ITokenService _tokenService;
 
-        public LoginController(IHttpClientFactory clientFactory)
+        public LoginController(IHttpClientFactory clientFactory, ITokenService tokenService)
         {
             _client = clientFactory.CreateClient("EduClient");
+            _tokenService = tokenService;
         }
         public IActionResult SignIn()
         {
@@ -43,12 +47,14 @@ namespace OnlineEdu.WebUI.Controllers
                 var claimsIdentity = new ClaimsIdentity(claims, JwtBearerDefaults.AuthenticationScheme);
                 var authProps = new AuthenticationProperties
                 {
-                    IsPersistent = true,
+                    IsPersistent = false,
                     ExpiresUtc = response.ExpireDate
                 };
 
                 await HttpContext.SignInAsync(JwtBearerDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProps);
-                return RedirectToAction("Index", "Home");
+
+                return RedirectToAction("Index", "Home"); // Yedek çözüm
+                
             }
             
             ModelState.AddModelError("", "Email veya Şifre Hatalı");

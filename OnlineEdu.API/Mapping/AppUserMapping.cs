@@ -9,6 +9,7 @@ namespace OnlineEdu.API.Mapping
         public AppUserMapping()
         {
             CreateMap<AppUser,ResultAppUserDto>().ReverseMap();
+            CreateMap<AppUser,ResultBlogWithWriterDto>().ReverseMap();
         }
     }
 }

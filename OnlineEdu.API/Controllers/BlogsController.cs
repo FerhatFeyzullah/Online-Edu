@@ -8,7 +8,7 @@ using OnlineEdu.Entity.Entities;
 
 namespace OnlineEdu.API.Controllers
 {
-    [Authorize(Roles = "Admin,Taecher")]
+    [Authorize(Roles = "Admin,Teacher")]
     [Route("api/[controller]")]
     [ApiController]
     public class BlogsController(IMapper _mapper,IBlogService _blogService) : ControllerBase
@@ -52,10 +52,10 @@ namespace OnlineEdu.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(CreateBlogDto createBlogDto)
+        public  IActionResult CreateAsync(CreateBlogDto createBlogDto)
         {
             var value = _mapper.Map<Blog>(createBlogDto);
-            _blogService.ACreate(value);
+             _blogService.ACreate(value);
             return Ok("Blog Ekleme Basarili.");
         }
 

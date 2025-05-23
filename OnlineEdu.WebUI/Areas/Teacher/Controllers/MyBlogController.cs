@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using OnlineEdu.Entity.Entities;
 using OnlineEdu.WebUI.DTOs.BlogCategoryDTOs;
 using OnlineEdu.WebUI.DTOs.BlogDTOs;
-using OnlineEdu.WebUI.Helper;
 using OnlineEdu.WebUI.Services.TokenService;
 
 namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
@@ -61,9 +58,8 @@ namespace OnlineEdu.WebUI.Areas.Teacher.Controllers
         {
             var userId = _tokenService.GetUserId;
             createBlogDto.WriterId = userId;
-            
             await _client.PostAsJsonAsync("blogs", createBlogDto);
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> UpdateBlog(int id)
         {

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OnlineEdu.DTO.DTOs.AppUserDTOs;
-using OnlineEdu.DTO.DTOs.BlogCategoryDTOs;
-using OnlineEdu.DTO.DTOs.TeacherSocialDTOs;
-using OnlineEdu.WebUI.DTOs.BlogCategoryDTOs;
+﻿using OnlineEdu.WebUI.DTOs.BlogCategoryDTOs;
+using OnlineEdu.WebUI.DTOs.UserDTOs;
 
 namespace OnlineEdu.WebUI.DTOs.BlogDTOs
 {

@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using OnlineEdu.Business.Interface;
 using OnlineEdu.DTO.DTOs.UserDTOs;
 using OnlineEdu.Entity.Entities;
 
 namespace OnlineEdu.Business.Management
 {
-    public class UserService : IUserService
+    public class UserService(UserManager<AppUser> _userManager, SignInManager<AppUser> _singInManager,
+        RoleManager<AppRole> _roleManager, IMapper _mapper) : IUserService
     {
         public Task<bool> AssignRoleAsync(List<AssignRoleDto> assignRoleDto)
         {
@@ -21,25 +24,52 @@ namespace OnlineEdu.Business.Management
         {
             throw new NotImplementedException();
         }
-
-        public Task<IdentityResult> CreateUserAsync(RegisterDto userRegisterDto)
+        public async Task<IdentityResult> CreateUserAsync(RegisterDto RegisterDto)
         {
-            throw new NotImplementedException();
+
+            var user = new AppUser()
+            {
+                FirstName = RegisterDto.FirstName,
+                LastName = RegisterDto.LastName,
+                UserName = RegisterDto.UserName,
+                Email = RegisterDto.Email,
+            };
+
+            if (RegisterDto.Password != RegisterDto.ConfirmPassword)
+            {
+                return new IdentityResult();
+            }
+
+            var result = await _userManager.CreateAsync(user, RegisterDto.Password);
+
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, "Student");
+                return result;
+            }
+            return result;
+
         }
 
-        public Task<List<ResultJustUserDto>> Get4Teachers()
+        public async Task<List<ResultJustUserDto>> Get3Teachers()
         {
-            throw new NotImplementedException();
+
+            var values = await _userManager.Users.Include(x => x.TeacherSocials).ToListAsync();
+            var filtered = values.Where(x => _userManager.IsInRoleAsync(x, "Teacher").Result).OrderByDescending(x => x.Id).Take(3).ToList();
+            return _mapper.Map<List<ResultJustUserDto>>(filtered);
+
         }
 
-        public Task<List<ResultJustUserDto>> GetAllTeachers()
+        public async Task<List<ResultJustUserDto>> GetAllTeachers()
         {
-            throw new NotImplementedException();
+            var values = await _userManager.Users.Include(x => x.TeacherSocials).ToListAsync();
+            var filtered = values.Where(x => _userManager.IsInRoleAsync(x, "Teacher").Result).ToList();
+            return _mapper.Map<List<ResultJustUserDto>>(filtered);
         }
 
-        public Task<List<AppUser>> GetAllUsersAsync()
+        public async Task<List<AppUser>> GetAllUsersAsync()
         {
-            throw new NotImplementedException();
+            return await _userManager.Users.ToListAsync();
         }
 
         public Task<int> GetTeacherCount()
@@ -47,19 +77,49 @@ namespace OnlineEdu.Business.Management
             throw new NotImplementedException();
         }
 
-        public Task<AppUser> GetUserByIdAsync(int id)
+        public async Task<ResultJustUserDto> GetUserById(int id)
         {
-            throw new NotImplementedException();
+            var value = await _userManager.Users.FirstOrDefaultAsync(x => x.Id == id);
+            return _mapper.Map<ResultJustUserDto>(value);
+
         }
 
-        public Task<string> LoginAsync(LoginDto userLoginDto)
+        public async Task<AppUser> GetUserByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _userManager.Users.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task LogoutAsync()
+        public async Task<string> LoginAsync(LoginDto LoginDto)
         {
-            throw new NotImplementedException();
+            var user = await _userManager.FindByEmailAsync(LoginDto.Email);
+            if (user == null)
+            {
+                return null;
+            }
+
+            var result = await _singInManager.PasswordSignInAsync(user, LoginDto.Password, false, false);
+
+            if (!result.Succeeded)
+            {
+                return null;
+            }
+            else
+            {
+                var IsAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+                if (IsAdmin) { return "Admin"; }
+                var IsTeacher = await _userManager.IsInRoleAsync(user, "Teacher");
+                if (IsTeacher) { return "Teacher"; }
+                var IsStudent = await _userManager.IsInRoleAsync(user, "Student");
+                if (IsStudent) { return "Student"; }
+            }
+            return null;
+
+
+        }
+
+        public async Task LogoutAsync()
+        {
+            await _singInManager.SignOutAsync();
         }
     }
 }

@@ -1,11 +1,6 @@
 using System.Net.Http.Headers;
 using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.CodeAnalysis.FlowAnalysis;
-using Microsoft.EntityFrameworkCore;
-using OnlineEdu.DataAccess.Context;
-using OnlineEdu.Entity.Entities;
-using OnlineEdu.WebUI.Services.RoleService;
 using OnlineEdu.WebUI.Services.TokenService;
 using OnlineEdu.WebUI.Services.UserService;
 using OnlineEdu.WebUI.ValidationRules.RegisterValidation;
@@ -15,17 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 
-
-builder.Services.AddDbContext<OnlineEduContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
-});
-
-builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<OnlineEduContext>().AddErrorDescriber<CustomErrorDesciriber>();
-
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddHttpClient("EduClient", cfg => 
 {
@@ -47,6 +34,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddCo
     opt.Cookie.HttpOnly = true;
     opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
     opt.Cookie.Name = "OnlineEduJwt";
+    opt.SlidingExpiration = true;
+    
 });
 
 builder.Services.AddControllersWithViews();

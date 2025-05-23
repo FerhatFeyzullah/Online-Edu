@@ -1,0 +1,13 @@
+﻿@using OnlineEdu.WebUI.DTOs.UserDTOs
+@model ResultJustUserDto
+
+@{
+    ViewData["Title"] = "Yönetici Paneli";
+    ViewData["ProfileName"] = $"{Model.FirstName} {Model.LastName}";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <h3 style="text-align:center">Burada kullanıcıları ve diğer yönetici görevlerini yönetebilirsiniz</h3>
+    
+</div>

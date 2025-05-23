@@ -21,9 +21,10 @@ namespace OnlineEdu.Business.Interface
         Task<bool> AssignRoleAsync(List<AssignRoleDto> assignRoleDto);
         Task<List<AppUser>> GetAllUsersAsync();
 
-        Task<List<ResultJustUserDto>> Get4Teachers();
+        Task<List<ResultJustUserDto>> Get3Teachers();
 
         Task<AppUser> GetUserByIdAsync(int id);
+        Task<ResultJustUserDto> GetUserById(int id);
 
         Task<int> GetTeacherCount();
 

@@ -1,8 +1,6 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using OnlineEdu.DTO.DTOs.MessageDTOs;
+﻿using Microsoft.AspNetCore.Mvc;
 using OnlineEdu.WebUI.DTOs.ContactDTOs;
-using OnlineEdu.WebUI.Helper;
+using OnlineEdu.WebUI.DTOs.MessageDTOs;
 
 namespace OnlineEdu.WebUI.Controllers
 {

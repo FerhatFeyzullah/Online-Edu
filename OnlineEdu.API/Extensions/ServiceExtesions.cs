@@ -32,6 +32,8 @@ namespace OnlineEdu.API.Extensions
             services.AddScoped<ICourseVideoRepository, CourseVideoRepository>();
             services.AddScoped<ICourseVideoService, CourseVideoManager>();
 
+            services.AddScoped<IUserService, UserService>();
+
             services.AddScoped<IJwtService, JwtManager>();
 
             services.Configure<JwtTokenOptions>(configuration.GetSection("TokenOptions"));

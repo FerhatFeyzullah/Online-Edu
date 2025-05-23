@@ -1,0 +1,13 @@
+﻿@using OnlineEdu.WebUI.DTOs.UserDTOs
+@model ResultJustUserDto
+
+@{
+    ViewData["Title"] = "Eğitmen Paneli";
+    ViewData["ProfileName"] = $"{Model.FirstName} {Model.LastName}";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
+}
+
+<div>
+    <h3 style="text-align:center">Buradan verdiğiniz kursları yönetebilir, içerik ekleyebilir ve blog yazıları oluşturabilirsiniz</h3>
+
+</div>

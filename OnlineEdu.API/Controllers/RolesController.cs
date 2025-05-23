@@ -9,7 +9,7 @@ using OnlineEdu.Entity.Entities;
 
 namespace OnlineEdu.API.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class RolesController(RoleManager<AppRole> _roleManager, IMapper _mapper) : ControllerBase
@@ -27,14 +27,14 @@ namespace OnlineEdu.API.Controllers
         {
             var role = _mapper.Map<AppRole>(model);
             var result = await _roleManager.CreateAsync(role);
-            if (!result.Succeeded) 
+            if (!result.Succeeded)
             {
-            return BadRequest(result.Errors);
+                return BadRequest(result.Errors);
             }
             return Ok("Rol Oluşturuldu.");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var role = await _roleManager.Roles.FirstOrDefaultAsync(x => x.Id == id);

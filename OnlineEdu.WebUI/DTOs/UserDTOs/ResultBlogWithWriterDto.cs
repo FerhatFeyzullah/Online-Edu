@@ -1,4 +1,6 @@
-﻿using OnlineEdu.DTO.DTOs.TeacherSocialDTOs;
+﻿
+
+using OnlineEdu.WebUI.DTOs.TeacherSocialDTOs;
 
 namespace OnlineEdu.WebUI.DTOs.UserDTOs
 {
